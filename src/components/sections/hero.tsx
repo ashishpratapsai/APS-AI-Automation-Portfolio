@@ -107,104 +107,114 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right: Photo with orbiting tool logos */}
+          {/* Right: Photo with orbiting tool labels */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="hidden lg:block"
           >
-            <div className="relative w-[380px] h-[380px]">
-              {/* Orbit rings */}
-              <div className="absolute inset-[30px] rounded-full border border-dashed border-border/30" />
-              <div className="absolute inset-[-10px] rounded-full border border-dashed border-border/20" />
+            <div className="relative w-[420px] h-[420px]">
+              {/* Spinning orbit rings */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-[40px] rounded-full border border-dashed border-border/20"
+              />
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-[-5px] rounded-full border border-dashed border-border/15"
+              />
 
-              {/* Center photo */}
-              <div className="absolute inset-[50px] rounded-full overflow-hidden border-2 border-border">
+              {/* Center photo — blend white bg away in dark mode */}
+              <div className="absolute inset-[60px] rounded-full overflow-hidden">
+                {/* Gradient ring behind the photo */}
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary/30 via-transparent to-primary/10" />
                 <Image
                   src="/images/ashish-headshot.webp"
                   alt={SITE_CONFIG.name}
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-top dark:mix-blend-lighten dark:brightness-90"
                   priority
-                  sizes="280px"
+                  sizes="300px"
                 />
               </div>
 
-              {/* Orbiting logos - inner ring */}
-              {[
-                { slug: "n8n", angle: 0, ring: 155 },
-                { slug: "openai", angle: 72, ring: 155 },
-                { slug: "claude", angle: 144, ring: 155 },
-                { slug: "googlegemini", angle: 216, ring: 155 },
-                { slug: "airtable", angle: 288, ring: 155 },
-              ].map((tool, i) => (
-                <motion.div
-                  key={tool.slug}
-                  className="absolute"
-                  style={{
-                    left: `calc(50% + ${Math.cos((tool.angle * Math.PI) / 180) * tool.ring}px - 16px)`,
-                    top: `calc(50% + ${Math.sin((tool.angle * Math.PI) / 180) * tool.ring}px - 16px)`,
-                  }}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.8 + i * 0.15, duration: 0.4 }}
-                >
-                  <motion.div
-                    animate={{ y: [0, -4, 0] }}
-                    transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut" }}
-                    className="h-8 w-8 rounded-full bg-background border border-border flex items-center justify-center shadow-sm"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={`https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tool.slug}.svg`}
-                      alt=""
-                      width={14}
-                      height={14}
-                      className="opacity-60 dark:invert"
-                    />
-                  </motion.div>
-                </motion.div>
-              ))}
+              {/* Orbiting text labels - inner ring (spins slowly) */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0"
+              >
+                {[
+                  { label: "n8n", angle: 0 },
+                  { label: "OpenAI", angle: 72 },
+                  { label: "Claude", angle: 144 },
+                  { label: "Gemini", angle: 216 },
+                  { label: "Airtable", angle: 288 },
+                ].map((tool) => {
+                  const r = 175;
+                  const x = Math.cos((tool.angle * Math.PI) / 180) * r;
+                  const y = Math.sin((tool.angle * Math.PI) / 180) * r;
+                  return (
+                    <motion.div
+                      key={tool.label}
+                      className="absolute"
+                      style={{
+                        left: `calc(50% + ${x}px)`,
+                        top: `calc(50% + ${y}px)`,
+                        transform: "translate(-50%, -50%)",
+                      }}
+                      animate={{ rotate: -360 }}
+                      transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                    >
+                      <span className="px-3 py-1 text-[10px] font-medium rounded-full bg-background/80 border border-border/50 text-foreground/70 backdrop-blur-sm whitespace-nowrap">
+                        {tool.label}
+                      </span>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
 
-              {/* Orbiting logos - outer ring */}
-              {[
-                { slug: "slack", angle: 36, ring: 200 },
-                { slug: "stripe", angle: 108, ring: 200 },
-                { slug: "gmail", angle: 180, ring: 200 },
-                { slug: "supabase", angle: 252, ring: 200 },
-                { slug: "calendly", angle: 324, ring: 200 },
-              ].map((tool, i) => (
-                <motion.div
-                  key={tool.slug}
-                  className="absolute"
-                  style={{
-                    left: `calc(50% + ${Math.cos((tool.angle * Math.PI) / 180) * tool.ring}px - 14px)`,
-                    top: `calc(50% + ${Math.sin((tool.angle * Math.PI) / 180) * tool.ring}px - 14px)`,
-                  }}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.2 + i * 0.12, duration: 0.4 }}
-                >
-                  <motion.div
-                    animate={{ y: [0, -3, 0] }}
-                    transition={{ duration: 4 + i * 0.4, repeat: Infinity, ease: "easeInOut" }}
-                    className="h-7 w-7 rounded-full bg-background border border-border flex items-center justify-center shadow-sm"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={`https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tool.slug}.svg`}
-                      alt=""
-                      width={12}
-                      height={12}
-                      className="opacity-50 dark:invert"
-                    />
-                  </motion.div>
-                </motion.div>
-              ))}
+              {/* Orbiting text labels - outer ring (spins opposite) */}
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0"
+              >
+                {[
+                  { label: "Slack", angle: 36 },
+                  { label: "Stripe", angle: 108 },
+                  { label: "Gmail", angle: 180 },
+                  { label: "Supabase", angle: 252 },
+                  { label: "Calendly", angle: 324 },
+                ].map((tool) => {
+                  const r = 215;
+                  const x = Math.cos((tool.angle * Math.PI) / 180) * r;
+                  const y = Math.sin((tool.angle * Math.PI) / 180) * r;
+                  return (
+                    <motion.div
+                      key={tool.label}
+                      className="absolute"
+                      style={{
+                        left: `calc(50% + ${x}px)`,
+                        top: `calc(50% + ${y}px)`,
+                        transform: "translate(-50%, -50%)",
+                      }}
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
+                    >
+                      <span className="px-2.5 py-1 text-[9px] font-medium rounded-full bg-background/60 border border-border/40 text-foreground/50 backdrop-blur-sm whitespace-nowrap">
+                        {tool.label}
+                      </span>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
 
-              {/* Status badge - bottom center */}
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2">
+              {/* Status badge */}
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
