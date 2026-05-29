@@ -127,15 +127,13 @@ export function Hero() {
                 className="absolute inset-[-5px] rounded-full border border-dashed border-border/15"
               />
 
-              {/* Center photo — blend white bg away in dark mode */}
-              <div className="absolute inset-[60px] rounded-full overflow-hidden">
-                {/* Gradient ring behind the photo */}
-                <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary/30 via-transparent to-primary/10" />
+              {/* Center photo — white bg removed via mix-blend-screen */}
+              <div className="absolute inset-[60px] rounded-full overflow-hidden bg-background">
                 <Image
                   src="/images/ashish-headshot.webp"
                   alt={SITE_CONFIG.name}
                   fill
-                  className="object-cover object-top dark:mix-blend-lighten dark:brightness-90"
+                  className="object-cover object-top dark:mix-blend-screen"
                   priority
                   sizes="300px"
                 />
