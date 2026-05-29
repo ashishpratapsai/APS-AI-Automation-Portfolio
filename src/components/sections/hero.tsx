@@ -77,14 +77,6 @@ export function Hero() {
               >
                 Get in touch
               </button>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 rounded-lg border border-border text-foreground text-sm font-medium hover:bg-muted transition-colors"
-              >
-                View resume
-              </a>
             </motion.div>
 
             {/* Quick stats */}

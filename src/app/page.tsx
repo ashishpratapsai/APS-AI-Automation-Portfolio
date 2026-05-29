@@ -6,12 +6,14 @@ import { Projects } from "@/components/sections/projects";
 import { Services } from "@/components/sections/services";
 import { Contact } from "@/components/sections/contact";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { AnimatedBackground } from "@/components/ui/animated-bg";
 
 export default function Home() {
   return (
     <>
+      <AnimatedBackground />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Projects />
