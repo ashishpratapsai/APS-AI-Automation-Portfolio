@@ -1,20 +1,20 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const capabilities = [
   "n8n workflow design and deployment (webhooks, scheduled flows, error handling, conditional logic, sub-workflows)",
-  "AI agent integration (connecting OpenAI, Claude, Gemini APIs into business workflows with prompt engineering)",
+  "AI agent integration (connecting OpenAI, Claude, Gemini APIs into business workflows)",
   "Multi-tool orchestration (connecting 5-10+ tools in a single automated pipeline with zero manual steps)",
   "Business process automation (lead gen, proposal generation, meeting capture, content creation, onboarding)",
-  "API integrations (connecting any SaaS tool via REST APIs, webhooks, and OAuth)",
+  "Web scraping and research automation at scale",
 ];
 
 interface Tool {
   name: string;
-  icon: string; // simple-icons slug or full URL
+  // jsdelivr slug (null = no icon, just text)
+  icon: string | null;
 }
 
 const toolGroups: { label: string; tools: Tool[] }[] = [
@@ -22,19 +22,16 @@ const toolGroups: { label: string; tools: Tool[] }[] = [
     label: "Automation",
     tools: [
       { name: "n8n", icon: "n8n" },
-      { name: "Webhooks", icon: "webhook" },
-      { name: "REST APIs", icon: "openapiinitiative" },
-      { name: "OAuth", icon: "auth0" },
+      { name: "Webhooks", icon: null },
+      { name: "Cron Jobs", icon: null },
     ],
   },
   {
-    label: "AI Tools",
+    label: "AI",
     tools: [
       { name: "OpenAI", icon: "openai" },
       { name: "Claude", icon: "claude" },
       { name: "Gemini", icon: "googlegemini" },
-      { name: "Whisper", icon: "openai" },
-      { name: "Prompt Engineering", icon: "openai" },
     ],
   },
   {
@@ -47,11 +44,10 @@ const toolGroups: { label: string; tools: Tool[] }[] = [
     ],
   },
   {
-    label: "Sales & Outreach",
+    label: "Sales & Payments",
     tools: [
-      { name: "PandaDoc", icon: "pandadoc" },
       { name: "Calendly", icon: "calendly" },
-      { name: "Instantly", icon: "minutemailer" },
+      { name: "PandaDoc", icon: null },
       { name: "Stripe", icon: "stripe" },
       { name: "Razorpay", icon: "razorpay" },
     ],
@@ -62,29 +58,33 @@ const toolGroups: { label: string; tools: Tool[] }[] = [
       { name: "Slack", icon: "slack" },
       { name: "Gmail", icon: "gmail" },
       { name: "Google Drive", icon: "googledrive" },
-      { name: "Fathom", icon: "fathom" },
     ],
   },
   {
-    label: "Scraping & Research",
+    label: "Scraping",
     tools: [
-      { name: "Apify", icon: "apify" },
-      { name: "SerpAPI", icon: "google" },
-      { name: "HTTP Scraping", icon: "curl" },
+      { name: "Apify", icon: null },
+      { name: "SerpAPI", icon: null },
     ],
   },
 ];
 
-function ToolIcon({ slug }: { slug: string }) {
+function ToolBadge({ tool }: { tool: Tool }) {
   return (
-    <Image
-      src={`https://cdn.simpleicons.org/${slug}/_/dark`}
-      alt=""
-      width={14}
-      height={14}
-      className="opacity-70 dark:invert"
-      unoptimized
-    />
+    <span className="inline-flex items-center gap-2 px-3 py-1.5 text-xs rounded-md border border-border text-foreground/70 bg-muted/50">
+      {tool.icon && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={`https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tool.icon}.svg`}
+          alt=""
+          width={14}
+          height={14}
+          className="opacity-60 dark:invert"
+          loading="lazy"
+        />
+      )}
+      {tool.name}
+    </span>
   );
 }
 
@@ -173,13 +173,7 @@ export function About() {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {group.tools.map((tool) => (
-                      <span
-                        key={tool.name}
-                        className="inline-flex items-center gap-2 px-3 py-1.5 text-xs rounded-md border border-border text-foreground/70 bg-muted/50"
-                      >
-                        <ToolIcon slug={tool.icon} />
-                        {tool.name}
-                      </span>
+                      <ToolBadge key={tool.name} tool={tool} />
                     ))}
                   </div>
                 </div>

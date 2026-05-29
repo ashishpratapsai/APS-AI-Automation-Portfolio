@@ -34,7 +34,7 @@ export function GlowCard({ children, className }: GlowCardProps) {
       )}
       style={
         isHovered
-          ? { borderColor: "rgba(239, 68, 68, 0.2)" }
+          ? { borderColor: "rgba(232, 115, 90, 0.2)" }
           : undefined
       }
     >
@@ -43,7 +43,7 @@ export function GlowCard({ children, className }: GlowCardProps) {
         <div
           className="pointer-events-none absolute inset-0 z-10"
           style={{
-            background: `radial-gradient(400px circle at ${glowPos.x}px ${glowPos.y}px, rgba(239, 68, 68, 0.08), transparent 60%)`,
+            background: `radial-gradient(400px circle at ${glowPos.x}px ${glowPos.y}px, rgba(232, 115, 90, 0.08), transparent 60%)`,
           }}
         />
       )}

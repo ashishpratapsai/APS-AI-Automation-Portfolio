@@ -107,30 +107,110 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right: Photo */}
+          {/* Right: Photo with orbiting tool logos */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="hidden lg:block"
           >
-            <div className="relative w-[300px] h-[380px] rounded-2xl overflow-hidden border border-border">
-              <Image
-                src="/images/ashish-headshot.webp"
-                alt={SITE_CONFIG.name}
-                fill
-                className="object-cover object-top"
-                priority
-                sizes="300px"
-              />
-            </div>
-            {/* Status */}
-            <div className="flex items-center gap-2 mt-4">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-              </span>
-              <span className="text-xs text-muted-foreground">Available for work</span>
+            <div className="relative w-[380px] h-[380px]">
+              {/* Orbit rings */}
+              <div className="absolute inset-[30px] rounded-full border border-dashed border-border/30" />
+              <div className="absolute inset-[-10px] rounded-full border border-dashed border-border/20" />
+
+              {/* Center photo */}
+              <div className="absolute inset-[50px] rounded-full overflow-hidden border-2 border-border">
+                <Image
+                  src="/images/ashish-headshot.webp"
+                  alt={SITE_CONFIG.name}
+                  fill
+                  className="object-cover object-top"
+                  priority
+                  sizes="280px"
+                />
+              </div>
+
+              {/* Orbiting logos - inner ring */}
+              {[
+                { slug: "n8n", angle: 0, ring: 155 },
+                { slug: "openai", angle: 72, ring: 155 },
+                { slug: "claude", angle: 144, ring: 155 },
+                { slug: "googlegemini", angle: 216, ring: 155 },
+                { slug: "airtable", angle: 288, ring: 155 },
+              ].map((tool, i) => (
+                <motion.div
+                  key={tool.slug}
+                  className="absolute"
+                  style={{
+                    left: `calc(50% + ${Math.cos((tool.angle * Math.PI) / 180) * tool.ring}px - 16px)`,
+                    top: `calc(50% + ${Math.sin((tool.angle * Math.PI) / 180) * tool.ring}px - 16px)`,
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.8 + i * 0.15, duration: 0.4 }}
+                >
+                  <motion.div
+                    animate={{ y: [0, -4, 0] }}
+                    transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut" }}
+                    className="h-8 w-8 rounded-full bg-background border border-border flex items-center justify-center shadow-sm"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tool.slug}.svg`}
+                      alt=""
+                      width={14}
+                      height={14}
+                      className="opacity-60 dark:invert"
+                    />
+                  </motion.div>
+                </motion.div>
+              ))}
+
+              {/* Orbiting logos - outer ring */}
+              {[
+                { slug: "slack", angle: 36, ring: 200 },
+                { slug: "stripe", angle: 108, ring: 200 },
+                { slug: "gmail", angle: 180, ring: 200 },
+                { slug: "supabase", angle: 252, ring: 200 },
+                { slug: "calendly", angle: 324, ring: 200 },
+              ].map((tool, i) => (
+                <motion.div
+                  key={tool.slug}
+                  className="absolute"
+                  style={{
+                    left: `calc(50% + ${Math.cos((tool.angle * Math.PI) / 180) * tool.ring}px - 14px)`,
+                    top: `calc(50% + ${Math.sin((tool.angle * Math.PI) / 180) * tool.ring}px - 14px)`,
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1.2 + i * 0.12, duration: 0.4 }}
+                >
+                  <motion.div
+                    animate={{ y: [0, -3, 0] }}
+                    transition={{ duration: 4 + i * 0.4, repeat: Infinity, ease: "easeInOut" }}
+                    className="h-7 w-7 rounded-full bg-background border border-border flex items-center justify-center shadow-sm"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tool.slug}.svg`}
+                      alt=""
+                      width={12}
+                      height={12}
+                      className="opacity-50 dark:invert"
+                    />
+                  </motion.div>
+                </motion.div>
+              ))}
+
+              {/* Status badge - bottom center */}
+              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+                </span>
+                <span className="text-xs text-muted-foreground whitespace-nowrap">Available for work</span>
+              </div>
             </div>
           </motion.div>
         </div>
