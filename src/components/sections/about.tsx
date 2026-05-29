@@ -4,19 +4,38 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const capabilities = [
-  "n8n workflow design and deployment (webhooks, scheduled flows, error handling, self-hosting)",
-  "AI agent integration (LLM APIs, RAG pipelines, prompt engineering, document AI)",
-  "Full-stack SaaS development (Next.js, TypeScript, PostgreSQL, Supabase)",
-  "API integrations (OpenAI, Claude, Notion, Gmail, Google Drive, Razorpay, vector DBs)",
-  "Business process automation (lead gen, invoicing, onboarding, reporting, data sync)",
+  "n8n workflow design and deployment (webhooks, scheduled flows, error handling, conditional logic, sub-workflows)",
+  "AI agent integration (connecting OpenAI, Claude, Gemini APIs into business workflows with prompt engineering)",
+  "Multi-tool orchestration (connecting 5-10+ tools in a single automated pipeline with zero manual steps)",
+  "Business process automation (lead gen, proposal generation, meeting capture, content creation, onboarding)",
+  "API integrations (connecting any SaaS tool via REST APIs, webhooks, and OAuth)",
 ];
 
-const techGroups = [
-  { label: "Automation", tools: ["n8n", "Webhooks", "Cron Jobs", "Custom Nodes"] },
-  { label: "AI", tools: ["OpenAI API", "Claude API", "RAG", "AI Agents", "Prompt Engineering"] },
-  { label: "Backend", tools: ["Next.js", "TypeScript", "Python", "Node.js"] },
-  { label: "Data", tools: ["PostgreSQL", "Supabase", "Prisma", "Vector DBs"] },
-  { label: "Integrations", tools: ["Notion", "Gmail", "Google Drive", "Razorpay", "REST APIs"] },
+const toolGroups = [
+  {
+    label: "Automation",
+    tools: ["n8n", "Webhooks", "Cron Jobs", "REST APIs", "OAuth"],
+  },
+  {
+    label: "AI Tools",
+    tools: ["OpenAI API", "Claude API", "Google Gemini", "Whisper", "Prompt Engineering"],
+  },
+  {
+    label: "CRM & Data",
+    tools: ["Airtable", "Google Sheets", "Supabase", "Notion"],
+  },
+  {
+    label: "Sales & Outreach",
+    tools: ["PandaDoc", "Calendly", "Instantly", "Stripe", "Razorpay"],
+  },
+  {
+    label: "Communication",
+    tools: ["Slack", "Gmail", "Google Drive", "Fathom"],
+  },
+  {
+    label: "Scraping & Research",
+    tools: ["Apify", "SerpAPI", "HTTP Scraping", "Web Research Agents"],
+  },
 ];
 
 export function About() {
@@ -40,30 +59,35 @@ export function About() {
           >
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
-                I design and build end-to-end AI automation systems. My work
-                sits at the intersection of{" "}
-                <span className="text-foreground">workflow automation</span>,{" "}
-                <span className="text-foreground">artificial intelligence</span>,
-                and{" "}
-                <span className="text-foreground">software engineering</span>.
+                I automate business operations by connecting tools, APIs, and AI
+                into workflows that run themselves. My strength is taking a
+                manual process that eats hours of someone&apos;s time and turning
+                it into an{" "}
+                <span className="text-foreground">
+                  automated pipeline that works 24/7
+                </span>{" "}
+                with zero human intervention.
               </p>
               <p>
-                I help businesses identify manual bottlenecks and replace them
-                with intelligent, self-running workflows. The goal is always the
-                same: less manual work, more output, fewer errors.
+                I work primarily with{" "}
+                <span className="text-foreground">n8n</span> for workflow
+                automation and integrate AI models (OpenAI, Claude, Gemini) to
+                add intelligence to every step. From scraping and research agents
+                to proposal generators and meeting capture systems, I build
+                automation that saves real money.
               </p>
               <p>
                 I also built{" "}
-                <span className="text-foreground">Institura</span>, a
-                production SaaS platform serving as an AI-powered operating
-                system for coaching institutes, with 30+ modules, AI timetable
-                generation, online testing, and Razorpay-powered billing.
+                <span className="text-foreground">Institura</span>, a full
+                production SaaS platform for coaching institutes, with AI
+                timetable generation, question paper creation, online testing,
+                and Razorpay billing. Built it end-to-end using Claude Code.
               </p>
             </div>
 
             <div className="mt-8 space-y-3">
               <h3 className="text-sm font-medium text-foreground uppercase tracking-wider mb-4">
-                Capabilities
+                What I bring to the table
               </h3>
               {capabilities.map((cap, i) => (
                 <motion.div
@@ -81,7 +105,7 @@ export function About() {
             </div>
           </motion.div>
 
-          {/* Right: Tech stack */}
+          {/* Right: Tools I work with */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -89,10 +113,10 @@ export function About() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h3 className="text-sm font-medium text-foreground uppercase tracking-wider mb-6">
-              Tech Stack
+              Tools I work with
             </h3>
             <div className="space-y-6">
-              {techGroups.map((group) => (
+              {toolGroups.map((group) => (
                 <div key={group.label}>
                   <div className="text-xs text-muted-foreground uppercase tracking-wider mb-2">
                     {group.label}
