@@ -9,7 +9,6 @@ export const SITE_CONFIG = {
   socials: {
     github: "https://github.com/ashishpratapsingh",
     linkedin: "https://www.linkedin.com/in/aiaps",
-    twitter: "https://x.com/ashishpratapsingh",
     youtube: "https://youtube.com/@automatewithashish",
   },
 };

@@ -1,10 +1,9 @@
 import { SITE_CONFIG } from "@/lib/constants";
-import { GitHubIcon, LinkedInIcon, XIcon, YouTubeIcon } from "@/components/ui/social-icons";
+import { GitHubIcon, LinkedInIcon, YouTubeIcon } from "@/components/ui/social-icons";
 
 const socialLinks = [
   { icon: GitHubIcon, href: SITE_CONFIG.socials.github, label: "GitHub" },
   { icon: LinkedInIcon, href: SITE_CONFIG.socials.linkedin, label: "LinkedIn" },
-  { icon: XIcon, href: SITE_CONFIG.socials.twitter, label: "X" },
   { icon: YouTubeIcon, href: SITE_CONFIG.socials.youtube, label: "YouTube" },
 ];
 
