@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 
@@ -11,32 +12,81 @@ const capabilities = [
   "API integrations (connecting any SaaS tool via REST APIs, webhooks, and OAuth)",
 ];
 
-const toolGroups = [
+interface Tool {
+  name: string;
+  icon: string; // simple-icons slug or full URL
+}
+
+const toolGroups: { label: string; tools: Tool[] }[] = [
   {
     label: "Automation",
-    tools: ["n8n", "Webhooks", "Cron Jobs", "REST APIs", "OAuth"],
+    tools: [
+      { name: "n8n", icon: "n8n" },
+      { name: "Webhooks", icon: "webhook" },
+      { name: "REST APIs", icon: "openapiinitiative" },
+      { name: "OAuth", icon: "auth0" },
+    ],
   },
   {
     label: "AI Tools",
-    tools: ["OpenAI API", "Claude API", "Google Gemini", "Whisper", "Prompt Engineering"],
+    tools: [
+      { name: "OpenAI", icon: "openai" },
+      { name: "Claude", icon: "claude" },
+      { name: "Gemini", icon: "googlegemini" },
+      { name: "Whisper", icon: "openai" },
+      { name: "Prompt Engineering", icon: "openai" },
+    ],
   },
   {
     label: "CRM & Data",
-    tools: ["Airtable", "Google Sheets", "Supabase", "Notion"],
+    tools: [
+      { name: "Airtable", icon: "airtable" },
+      { name: "Google Sheets", icon: "googlesheets" },
+      { name: "Supabase", icon: "supabase" },
+      { name: "Notion", icon: "notion" },
+    ],
   },
   {
     label: "Sales & Outreach",
-    tools: ["PandaDoc", "Calendly", "Instantly", "Stripe", "Razorpay"],
+    tools: [
+      { name: "PandaDoc", icon: "pandadoc" },
+      { name: "Calendly", icon: "calendly" },
+      { name: "Instantly", icon: "minutemailer" },
+      { name: "Stripe", icon: "stripe" },
+      { name: "Razorpay", icon: "razorpay" },
+    ],
   },
   {
     label: "Communication",
-    tools: ["Slack", "Gmail", "Google Drive", "Fathom"],
+    tools: [
+      { name: "Slack", icon: "slack" },
+      { name: "Gmail", icon: "gmail" },
+      { name: "Google Drive", icon: "googledrive" },
+      { name: "Fathom", icon: "fathom" },
+    ],
   },
   {
     label: "Scraping & Research",
-    tools: ["Apify", "SerpAPI", "HTTP Scraping", "Web Research Agents"],
+    tools: [
+      { name: "Apify", icon: "apify" },
+      { name: "SerpAPI", icon: "google" },
+      { name: "HTTP Scraping", icon: "curl" },
+    ],
   },
 ];
+
+function ToolIcon({ slug }: { slug: string }) {
+  return (
+    <Image
+      src={`https://cdn.simpleicons.org/${slug}/_/dark`}
+      alt=""
+      width={14}
+      height={14}
+      className="opacity-70 dark:invert"
+      unoptimized
+    />
+  );
+}
 
 export function About() {
   return (
@@ -118,16 +168,17 @@ export function About() {
             <div className="space-y-6">
               {toolGroups.map((group) => (
                 <div key={group.label}>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wider mb-2">
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider mb-2.5">
                     {group.label}
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {group.tools.map((tool) => (
                       <span
-                        key={tool}
-                        className="px-3 py-1.5 text-xs rounded-md border border-border text-foreground/70 bg-muted/50"
+                        key={tool.name}
+                        className="inline-flex items-center gap-2 px-3 py-1.5 text-xs rounded-md border border-border text-foreground/70 bg-muted/50"
                       >
-                        {tool}
+                        <ToolIcon slug={tool.icon} />
+                        {tool.name}
                       </span>
                     ))}
                   </div>
