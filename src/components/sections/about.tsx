@@ -23,7 +23,6 @@ const toolGroups: { label: string; tools: Tool[] }[] = [
     tools: [
       { name: "n8n", icon: "n8n" },
       { name: "Webhooks", icon: null },
-      { name: "Cron Jobs", icon: null },
     ],
   },
   {
