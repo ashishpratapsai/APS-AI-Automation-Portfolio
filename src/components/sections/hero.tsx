@@ -28,6 +28,34 @@ export function Hero() {
     >
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-center">
+          {/* Mobile photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="lg:hidden flex justify-center mb-4"
+          >
+            <div className="relative">
+              <div className="relative w-44 h-44 sm:w-52 sm:h-52">
+                <Image
+                  src="/images/ashish-headshot.webp"
+                  alt={SITE_CONFIG.name}
+                  fill
+                  className="object-cover object-top"
+                  priority
+                  sizes="208px"
+                />
+              </div>
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1 rounded-full bg-background border border-border">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-500" />
+                </span>
+                <span className="text-[10px] text-muted-foreground whitespace-nowrap">Available for work</span>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Left: Content */}
           <motion.div
             variants={container}
@@ -119,13 +147,13 @@ export function Hero() {
                 className="absolute inset-[-5px] rounded-full border border-dashed border-border/15"
               />
 
-              {/* Center photo — white bg removed via mix-blend-screen */}
-              <div className="absolute inset-[60px] rounded-full overflow-hidden bg-background">
+              {/* Center photo */}
+              <div className="absolute inset-[60px] rounded-full overflow-hidden">
                 <Image
                   src="/images/ashish-headshot.webp"
                   alt={SITE_CONFIG.name}
                   fill
-                  className="object-cover object-top dark:mix-blend-screen"
+                  className="object-cover object-top"
                   priority
                   sizes="300px"
                 />
