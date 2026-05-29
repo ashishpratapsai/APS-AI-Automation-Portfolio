@@ -112,14 +112,6 @@ export function Contact() {
               >
                 <YouTubeIcon className="h-5 w-5" />
               </a>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors ml-2"
-              >
-                Resume PDF ↗
-              </a>
             </div>
           </motion.div>
 

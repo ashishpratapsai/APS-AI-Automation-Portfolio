@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
   email: "ashishprataps.ai@gmail.com",
   location: "Mumbai, India",
   socials: {
-    github: "https://github.com/ashishpratapsingh",
+    github: "https://github.com/ashishpratapsai",
     linkedin: "https://www.linkedin.com/in/aiaps",
     youtube: "https://youtube.com/@automatewithashish",
   },
