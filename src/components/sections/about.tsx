@@ -79,7 +79,7 @@ function ToolBadge({ tool }: { tool: Tool }) {
           alt=""
           width={14}
           height={14}
-          className="opacity-70 dark:[filter:brightness(0)_invert(1)]"
+          className="opacity-70 icon-invert"
           loading="lazy"
         />
       )}
