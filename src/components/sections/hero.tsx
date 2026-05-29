@@ -28,6 +28,35 @@ export function Hero() {
     >
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-center">
+          {/* Mobile photo — visible only on small screens */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="lg:hidden flex justify-center mb-4"
+          >
+            <div className="relative">
+              <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-2 border-border bg-background">
+                <Image
+                  src="/images/ashish-headshot.webp"
+                  alt={SITE_CONFIG.name}
+                  fill
+                  className="object-cover object-top dark:mix-blend-screen"
+                  priority
+                  sizes="192px"
+                />
+              </div>
+              {/* Status badge */}
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1 rounded-full bg-background border border-border">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-500" />
+                </span>
+                <span className="text-[10px] text-muted-foreground whitespace-nowrap">Available for work</span>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Left: Content */}
           <motion.div
             variants={container}
