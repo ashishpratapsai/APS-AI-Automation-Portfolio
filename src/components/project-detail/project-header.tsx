@@ -138,22 +138,34 @@ export function ProjectHeader({ project }: { project: Project }) {
         </motion.div>
       </motion.div>
 
-      {/* Hero image in a proper frame — full image, no cropping */}
+      {/* Hero: video embed if available, otherwise image */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
         className="rounded-xl border border-border overflow-hidden bg-muted/50"
       >
-        <Image
-          src={project.heroImage}
-          alt={project.title}
-          width={1200}
-          height={800}
-          className="w-full h-auto"
-          priority
-          sizes="(max-width: 768px) 100vw, 800px"
-        />
+        {project.demoVideo ? (
+          <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+            <iframe
+              src={`https://www.youtube.com/embed/${project.demoVideo}?rel=0`}
+              title={`${project.title} demo`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+        ) : (
+          <Image
+            src={project.heroImage}
+            alt={project.title}
+            width={1200}
+            height={800}
+            className="w-full h-auto"
+            priority
+            sizes="(max-width: 768px) 100vw, 800px"
+          />
+        )}
       </motion.div>
     </div>
   );

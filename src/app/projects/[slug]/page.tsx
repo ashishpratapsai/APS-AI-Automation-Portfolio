@@ -10,7 +10,6 @@ import { ProjectWorkflow } from "@/components/project-detail/project-workflow";
 import { ProjectIntegrations } from "@/components/project-detail/project-integrations";
 import { ProjectResults } from "@/components/project-detail/project-results";
 import { ProjectDiagram } from "@/components/project-detail/project-diagram";
-import { ProjectDemoVideo } from "@/components/project-detail/project-demo-video";
 import { ProjectScreenshots } from "@/components/project-detail/project-screenshots";
 import { ProjectNav } from "@/components/project-detail/project-nav";
 
@@ -72,7 +71,6 @@ export default async function ProjectPage({ params }: Props) {
           <ProjectOverview project={project} />
           <ProjectWorkflow project={project} />
           <ProjectIntegrations project={project} />
-          {project.demoVideo && <ProjectDemoVideo project={project} />}
           {project.diagramImage && <ProjectDiagram project={project} />}
           {project.screenshots.length > 0 && (
             <ProjectScreenshots project={project} />
