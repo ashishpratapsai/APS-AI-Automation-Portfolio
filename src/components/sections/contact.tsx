@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, Phone, FileText, ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SITE_CONFIG } from "@/lib/constants";
 import { GitHubIcon, LinkedInIcon, YouTubeIcon } from "@/components/ui/social-icons";
@@ -64,6 +64,17 @@ export function Contact() {
               <MapPin className="h-4 w-4" />
               <span className="text-sm">{SITE_CONFIG.location}</span>
             </div>
+
+            <a
+              href="/resume.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
+            >
+              <FileText className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
+              <span className="text-sm">View Resume</span>
+              <ArrowUpRight className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
           </div>
 
           <div className="flex items-center gap-4 pt-4">
