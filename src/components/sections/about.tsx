@@ -116,7 +116,7 @@ export function About() {
               <p>
                 We get 80 years if we&apos;re lucky. Most people spend a huge
                 chunk of that doing{" "}
-                <span className="text-foreground">
+                <span className="text-foreground font-semibold">
                   work a computer could handle in seconds
                 </span>
                 . If something can be delegated to a system that never gets tired
@@ -124,29 +124,29 @@ export function About() {
               </p>
               <p>
                 I learned this firsthand.{" "}
-                <span className="text-foreground">8 years inside coaching institutes</span>
+                <span className="text-foreground font-semibold">8 years inside coaching institutes</span>
                 , watching talented people burn hours on scheduling, fee tracking,
                 and formatting instead of teaching.{" "}
-                <span className="text-foreground">3 years creating content</span>
+                <span className="text-foreground font-semibold">3 years creating content</span>
                 , losing 12-20 hours every week to research, scripting, and
                 thumbnails before I could even hit record.
               </p>
               <p>
                 So I built systems to fix both. An{" "}
-                <span className="text-foreground">
+                <span className="text-foreground font-semibold">
                   autonomous content pipeline
                 </span>{" "}
                 across two YouTube channels and LinkedIn. A{" "}
-                <span className="text-foreground">
+                <span className="text-foreground font-semibold">
                   second brain in Notion
                 </span>{" "}
                 that captures every idea, task, and project. An{" "}
-                <span className="text-foreground">
+                <span className="text-foreground font-semibold">
                   AI Operating System
                 </span>{" "}
                 where Claude has a live map of my priorities, content pipeline,
                 and decision history. A{" "}
-                <span className="text-foreground">
+                <span className="text-foreground font-semibold">
                   full SaaS platform
                 </span>{" "}
                 with 30+ modules for institute operations.
