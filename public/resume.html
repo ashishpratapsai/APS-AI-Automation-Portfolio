@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashish Pratap Singh — AI Automation Engineer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: #1a1a1a;
+      background: #e8e8e8;
+      font-size: 10px;
+      line-height: 1.4;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 20px auto;
+      padding: 28px 32px 20px;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+
+    @media print {
+      body { background: #fff; margin: 0; }
+      .page {
+        margin: 0;
+        padding: 24px 28px 16px;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+      }
+    }
+
+    /* ===== COLORS (matching portfolio orange) ===== */
+    :root {
+      --accent: #e05a3a;
+      --accent-light: #f0896e;
+      --accent-pale: #f5ddd5;
+      --heading: #0f1419;
+      --text: #333;
+      --muted: #666;
+      --light: #999;
+      --border: #e0e0e0;
+      --tag-bg: #fef5f2;
+      --tag-border: #f0c4b8;
+      --tag-text: #b5422a;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .header-left { flex: 1; }
+
+    .name {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--heading);
+      line-height: 1.05;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    .linkedin-line {
+      margin-top: 12px;
+    }
+
+    .linkedin-line a {
+      color: var(--accent);
+      text-decoration: underline;
+      font-size: 10.5px;
+      font-weight: 500;
+    }
+
+    .contact-bar {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 5px 0;
+    }
+
+    .contact-bar .contact-item {
+      flex: 1;
+      text-align: center;
+    }
+
+    .contact-bar .contact-item:not(:last-child) {
+      border-right: 1px solid var(--border);
+    }
+
+    .contact-bar a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .headshot {
+      width: 90px;
+      height: 90px;
+      border-radius: 8px;
+      object-fit: cover;
+      object-position: top;
+      border: 3px solid var(--accent-light);
+      margin-left: 20px;
+      flex-shrink: 0;
+    }
+
+    /* ===== SECTION TITLES ===== */
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 12px;
+      margin-bottom: 2px;
+      padding-bottom: 4px;
+      border-bottom: 2.5px solid;
+      border-image: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent-pale)) 1;
+    }
+
+    /* ===== SUMMARY ===== */
+    .summary {
+      font-size: 10px;
+      color: var(--text);
+      line-height: 1.55;
+      margin-top: 5px;
+      text-align: justify;
+    }
+
+    .summary strong {
+      color: var(--heading);
+      font-weight: 700;
+    }
+
+    /* ===== EDUCATION + SKILLS ROW ===== */
+    .edu-skills-header {
+      display: flex;
+      align-items: baseline;
+      margin-top: 12px;
+      padding-bottom: 4px;
+      border-bottom: 2.5px solid;
+      border-image: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent-pale)) 1;
+    }
+
+    .edu-skills-header .left-label {
+      flex: 0 0 200px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .edu-skills-header .right-label {
+      flex: 1;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .edu-skills-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-top: 6px;
+    }
+
+    .edu-col { flex: 0 0 200px; }
+
+    .edu-school {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--heading);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .edu-dates {
+      font-size: 9.5px;
+      color: var(--light);
+      margin-left: 8px;
+    }
+
+    .edu-degree {
+      font-size: 9.5px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    .edu-gpa {
+      font-size: 9.5px;
+      color: var(--heading);
+      font-weight: 700;
+    }
+
+    .skills-col { flex: 1; }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      font-size: 9px;
+      font-weight: 500;
+      border: 1.5px solid var(--tag-border);
+      border-radius: 3px;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+    }
+
+    /* ===== WORK EXPERIENCE ===== */
+    .job { margin-bottom: 8px; }
+    .job:last-child { margin-bottom: 0; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 6px;
+    }
+
+    .job-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--heading);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .job-dates {
+      font-size: 9.5px;
+      color: var(--light);
+      white-space: nowrap;
+    }
+
+    .job-company {
+      font-size: 9.5px;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .job-company a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .job-bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .job-bullets li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 2px;
+      font-size: 9.5px;
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    .job-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .job-bullets li strong {
+      color: var(--heading);
+      font-weight: 700;
+    }
+
+    .metric {
+      font-weight: 800;
+      color: var(--heading);
+    }
+
+    .link-tag {
+      font-size: 8.5px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+
+    /* ===== TOOLS ===== */
+    .tools-grid {
+      display: flex;
+      gap: 16px;
+      font-size: 9.5px;
+      color: var(--text);
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .tools-grid .tool-cat {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* ===== PORTFOLIO LINK ===== */
+    .portfolio-link {
+      margin-top: 8px;
+      text-align: center;
+      font-size: 9px;
+      color: var(--light);
+    }
+
+    .portfolio-link a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-left">
+        <div class="name">ASHISH PRATAP SINGH</div>
+        <div class="subtitle">A I &nbsp; A U T O M A T I O N &nbsp; E N G I N E E R</div>
+        <div class="linkedin-line">
+          <a href="https://linkedin.com/in/aiaps">linkedin.com/in/aiaps</a>
+        </div>
+        <div class="contact-bar">
+          <div class="contact-item">+91 7983885860</div>
+          <div class="contact-item"><a href="mailto:ashishprataps.ai@gmail.com">ashishprataps.ai@gmail.com</a></div>
+          <div class="contact-item">Mumbai, India</div>
+        </div>
+      </div>
+      <img src="images/ashish-headshot.webp" alt="Ashish Pratap Singh" class="headshot" />
+    </div>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <div class="section-title">P R O F E S S I O N A L &nbsp; S U M M A R Y</div>
+    <div class="summary">
+      AI Automation Engineer with <strong>8+ years of domain experience</strong> in education operations and <strong>3 years in content creation</strong>. I build AI-powered systems using <strong>Claude Code, n8n, and MCP servers</strong>. Built <strong>Institura</strong>, a production SaaS with 30+ modules for coaching institutes. Designed automation workflows that <strong>saved clients Rs 8-10L/year</strong> in operational costs and <strong>reduced proposal delivery from days to 30 seconds</strong>. Built a personal AI Operating System connecting Notion and Claude for autonomous content production across YouTube and LinkedIn.
+    </div>
+
+    <!-- EDUCATION + SKILLS (side by side headings) -->
+    <div class="edu-skills-header">
+      <div class="left-label">E D U C A T I O N</div>
+      <div class="right-label">S K I L L S</div>
+    </div>
+    <div class="edu-skills-row">
+      <div class="edu-col">
+        <div>
+          <span class="edu-school">VIT VELLORE</span>
+          <span class="edu-dates">( 2015 - 2019 )</span>
+        </div>
+        <div class="edu-degree">B.Tech in Mechanical Engineering</div>
+        <div class="edu-gpa">CGPA - 8.09</div>
+      </div>
+      <div class="skills-col">
+        <div class="skill-tags">
+          <span class="skill-tag">Claude Code</span>
+          <span class="skill-tag">n8n Workflows</span>
+          <span class="skill-tag">Make.com</span>
+          <span class="skill-tag">AI Agents</span>
+          <span class="skill-tag">MCP Servers</span>
+          <span class="skill-tag">Claude / OpenAI / Gemini</span>
+          <span class="skill-tag">Airtable</span>
+          <span class="skill-tag">Notion Systems</span>
+          <span class="skill-tag">Content Automation</span>
+          <span class="skill-tag">Process Design</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK EXPERIENCE -->
+    <div class="section-title">W O R K &nbsp; E X P E R I E N C E</div>
+
+    <!-- AI Automation Engineer at Aifyy -->
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">AI AUTOMATION ENGINEER</div>
+        <div class="job-dates">( May 2025 - May 2026 )</div>
+      </div>
+      <div class="job-company">Aifyy — n8n + AI Workflow Systems</div>
+      <ul class="job-bullets">
+        <li><strong>AI Proposal Generator:</strong> Collects context from multiple sales calls, generates branded PandaDoc proposals with dynamic pricing in <span class="metric">30 seconds</span> (vs 2-3 days). 8 tools orchestrated: Fathom, Claude, PandaDoc, Stripe, Gmail, Google Drive</li>
+        <li><strong>Meeting Intelligence:</strong> Auto-captures call transcripts, classifies client vs internal, extracts action items, tracks call sequencing in CRM. <span class="metric">Zero follow-ups missed</span></li>
+        <li><strong>Prospect Research Agent:</strong> Scrapes websites, extracts intelligence via GPT-4.1, generates personalized cold email icebreakers. <span class="metric">500+ prospects per run</span></li>
+        <li><strong>Instagram Lead Scraper:</strong> Automated influencer discovery via SerpAPI. <span class="metric">1000s of profiles in minutes</span> vs weeks of manual research</li>
+      </ul>
+    </div>
+
+    <!-- Founder, Institura -->
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">FOUNDER</div>
+        <div class="job-dates">( Dec 2025 - Present )</div>
+      </div>
+      <div class="job-company"><a href="https://institura.com">Institura.com</a>, Mumbai — AI Operating System for Coaching Institutes <a href="https://institura.com" class="link-tag">Link</a></div>
+      <ul class="job-bullets">
+        <li><strong>Built a production SaaS</strong> with 30+ modules (timetable, fees, testing, attendance, payroll, homework, partner CRM) using Claude Code. Serving live coaching institutes</li>
+        <li><strong>AI Timetable Generation:</strong> Claude API produces conflict-free timetables in <span class="metric">60 seconds</span> (vs 10-15 hours manually). No competitor in India offers this</li>
+        <li><strong>AI Question Paper Creator:</strong> Mathpix OCR extracts questions from PDFs, auto-formats with logo and watermark. <span class="metric">Days to minutes</span></li>
+        <li><strong>Saving Rs 8-10L/yr</strong> in operational staff costs per institute (admin + typist + data entry roles automated)</li>
+      </ul>
+    </div>
+
+    <!-- Content Creator -->
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">CONTENT CREATOR & AI SYSTEMS</div>
+        <div class="job-dates">( 2022 - Present )</div>
+      </div>
+      <div class="job-company">Automate With Ashish (YouTube) &nbsp;|&nbsp; LinkedIn</div>
+      <ul class="job-bullets">
+        <li><strong>Content Accelerator:</strong> Autonomous pipeline using Claude Code + MCP servers across YouTube + LinkedIn. Idea pipeline, production stages, archive, research banks. Saved <span class="metric">12-20 hrs/week</span></li>
+        <li><strong>Second Brain:</strong> Full PARA knowledge management system in Notion (Inbox, Tasks, Projects, Areas, Resources, Notes, Archive) with integrated weekly scheduling</li>
+      </ul>
+    </div>
+
+    <!-- Teaching Background -->
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">MATHEMATICS FACULTY</div>
+        <div class="job-dates">( 2018 - 2025 )</div>
+      </div>
+      <div class="job-company">Vidyalankar, Mumbai (2021-2025) &nbsp;|&nbsp; Career Point, Kota (2018-2021)</div>
+      <ul class="job-bullets">
+        <li><strong>8 years teaching IIT-JEE Mathematics</strong> across two of India's top coaching brands. Domain experience that directly informed Institura's design</li>
+        <li><strong>3 years creating educational content</strong> (Crack The Maths YouTube channel for IIT-JEE), which built the foundation for the autonomous content pipeline used today</li>
+      </ul>
+    </div>
+
+    <!-- TOOLS -->
+    <div class="section-title">T O O L S</div>
+    <div class="tools-grid">
+      <div><span class="tool-cat">AI & Automation:</span> Claude Code, n8n, Make.com, MCP Servers</div>
+      <div><span class="tool-cat">LLMs:</span> Claude, OpenAI, Gemini</div>
+      <div><span class="tool-cat">Data:</span> Airtable, Notion, Supabase, Google Sheets</div>
+    </div>
+    <div class="tools-grid" style="margin-top: 3px;">
+      <div><span class="tool-cat">Integrations:</span> PandaDoc, Stripe, Razorpay, Slack, Gmail, Google Drive, Fathom, Apify, Calendly</div>
+    </div>
+
+    <!-- PORTFOLIO -->
+    <div class="portfolio-link">
+      Full project breakdowns at <a href="https://ashishpratapsingh.vercel.app">ashishpratapsingh.vercel.app</a>
+    </div>
+
+  </div>
+</body>
+</html>

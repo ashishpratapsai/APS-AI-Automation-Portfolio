@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   title: "AI Automation Expert",
   tagline:
     "I build intelligent automation workflows that save businesses hours every week.",
-  url: "https://ashishpratapsingh.com",
+  url: "https://ashishpratapsingh.vercel.app",
   email: "ashishprataps.ai@gmail.com",
   phone: "+91 7983885860",
   location: "Mumbai, India",
