@@ -66,7 +66,7 @@ export function Contact() {
             </div>
 
             <a
-              href="/resume.html"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
