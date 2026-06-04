@@ -114,50 +114,46 @@ export function About() {
           >
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                We get maybe 80 years. Most of that time, people spend doing the
-                same thing over and over:{" "}
+                We get 80 years if we&apos;re lucky. Most people spend a huge
+                chunk of that doing{" "}
                 <span className="text-foreground">
-                  work that a computer could handle in seconds
+                  work a computer could handle in seconds
                 </span>
-                . I think about that a lot. If something can be delegated to a
-                system that never gets tired, never forgets, and runs 24/7, why
-                are humans still doing it?
+                . If something can be delegated to a system that never gets tired
+                and runs 24/7, why is a human still doing it?
               </p>
               <p>
-                That thinking comes from real experience. I spent{" "}
-                <span className="text-foreground">8 years inside coaching institutes</span>,
-                watching talented people burn hours on scheduling, fee tracking,
-                and question paper formatting instead of teaching. On the side, I
-                was{" "}
-                <span className="text-foreground">creating content for 3 years</span>,
-                losing 12-20 hours every week to research, scripting, thumbnails,
-                and metadata before I could even hit record.
+                I learned this firsthand.{" "}
+                <span className="text-foreground">8 years inside coaching institutes</span>
+                , watching talented people burn hours on scheduling, fee tracking,
+                and formatting instead of teaching.{" "}
+                <span className="text-foreground">3 years creating content</span>
+                , losing 12-20 hours every week to research, scripting, and
+                thumbnails before I could even hit record.
               </p>
               <p>
-                So I stopped accepting that as normal. I built an{" "}
+                So I built systems to fix both. An{" "}
                 <span className="text-foreground">
                   autonomous content pipeline
                 </span>{" "}
-                that handles research, scripting, thumbnail generation, captions,
-                and YouTube metadata across two YouTube channels and LinkedIn. I
-                built a{" "}
+                across two YouTube channels and LinkedIn. A{" "}
                 <span className="text-foreground">
                   second brain in Notion
                 </span>{" "}
-                that captures every idea, task, and project. Then I connected it
-                all to AI through an{" "}
+                that captures every idea, task, and project. An{" "}
                 <span className="text-foreground">
                   AI Operating System
                 </span>{" "}
                 where Claude has a live map of my priorities, content pipeline,
-                journals, and decision history, so it works with full context,
-                not generic prompts.
+                and decision history. A{" "}
+                <span className="text-foreground">
+                  full SaaS platform
+                </span>{" "}
+                with 30+ modules for institute operations.
               </p>
               <p>
-                Then I did the same for institute operations: a full SaaS platform
-                with 30+ modules. Now I do it for others. Find the repetitive work
-                that eats your time, and replace it with a system that frees you
-                up to do what actually matters.
+                Now I do the same for others. Find the repetitive work eating
+                your time, replace it with a system that runs itself.
               </p>
             </div>
 
