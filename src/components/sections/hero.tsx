@@ -125,9 +125,9 @@ export function Hero() {
               variants={item}
               className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-[1.1] tracking-tight text-foreground"
             >
-              I build AI automation
+              I build AI systems
               <br />
-              systems that save
+              that save
               <br />
               businesses{" "}
               <span className="text-primary">hours every week.</span>
@@ -159,24 +159,6 @@ export function Hero() {
               </button>
             </motion.div>
 
-            {/* Quick stats */}
-            <motion.div
-              variants={item}
-              className="flex items-center gap-8 mt-12 pt-8 border-t border-border"
-            >
-              <div>
-                <div className="text-2xl font-bold text-foreground">10+</div>
-                <div className="text-xs text-muted-foreground mt-0.5">Workflows shipped</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-foreground">100+</div>
-                <div className="text-xs text-muted-foreground mt-0.5">Hours saved / week</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-foreground">1</div>
-                <div className="text-xs text-muted-foreground mt-0.5">SaaS product live</div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Right: Photo with orbiting tool labels */}

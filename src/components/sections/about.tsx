@@ -13,50 +13,50 @@ const capabilities = [
 
 interface Tool {
   name: string;
-  // jsdelivr slug (null = no icon, just text)
   icon: string | null;
+  color?: string;
 }
 
 const toolGroups: { label: string; tools: Tool[] }[] = [
   {
     label: "Automation",
     tools: [
-      { name: "n8n", icon: "n8n" },
+      { name: "n8n", icon: "n8n", color: "#EA4B71" },
       { name: "Webhooks", icon: null },
     ],
   },
   {
     label: "AI",
     tools: [
-      { name: "OpenAI", icon: "openai" },
-      { name: "Claude", icon: "claude" },
-      { name: "Gemini", icon: "googlegemini" },
+      { name: "OpenAI", icon: "openai", color: "#412991" },
+      { name: "Claude", icon: "claude", color: "#D97757" },
+      { name: "Gemini", icon: "googlegemini", color: "#8E75B2" },
     ],
   },
   {
     label: "CRM & Data",
     tools: [
-      { name: "Airtable", icon: "airtable" },
-      { name: "Google Sheets", icon: "googlesheets" },
-      { name: "Supabase", icon: "supabase" },
-      { name: "Notion", icon: "notion" },
+      { name: "Airtable", icon: "airtable", color: "#18BFFF" },
+      { name: "Google Sheets", icon: "googlesheets", color: "#34A853" },
+      { name: "Supabase", icon: "supabase", color: "#3FCF8E" },
+      { name: "Notion", icon: "notion", color: "#000000" },
     ],
   },
   {
     label: "Sales & Payments",
     tools: [
-      { name: "Calendly", icon: "calendly" },
+      { name: "Calendly", icon: "calendly", color: "#006BFF" },
       { name: "PandaDoc", icon: null },
-      { name: "Stripe", icon: "stripe" },
-      { name: "Razorpay", icon: "razorpay" },
+      { name: "Stripe", icon: "stripe", color: "#635BFF" },
+      { name: "Razorpay", icon: "razorpay", color: "#0C2451" },
     ],
   },
   {
     label: "Communication",
     tools: [
-      { name: "Slack", icon: "slack" },
-      { name: "Gmail", icon: "gmail" },
-      { name: "Google Drive", icon: "googledrive" },
+      { name: "Slack", icon: "slack", color: "#4A154B" },
+      { name: "Gmail", icon: "gmail", color: "#EA4335" },
+      { name: "Google Drive", icon: "googledrive", color: "#4285F4" },
     ],
   },
   {
@@ -72,14 +72,19 @@ function ToolBadge({ tool }: { tool: Tool }) {
   return (
     <span className="inline-flex items-center gap-2 px-3 py-1.5 text-xs rounded-md border border-border text-foreground/70 bg-muted/50">
       {tool.icon && (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={`https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tool.icon}.svg`}
-          alt=""
-          width={14}
-          height={14}
-          className="opacity-70 icon-invert"
-          loading="lazy"
+        <span
+          className="inline-block w-3.5 h-3.5 flex-shrink-0"
+          style={{
+            backgroundColor: tool.color || "currentColor",
+            maskImage: `url(https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tool.icon}.svg)`,
+            WebkitMaskImage: `url(https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tool.icon}.svg)`,
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+            maskPosition: "center",
+            WebkitMaskPosition: "center",
+          }}
         />
       )}
       {tool.name}
@@ -94,43 +99,33 @@ export function About() {
         <SectionHeading
           number="01"
           label="ABOUT"
-          title="What I do"
+          title="Why I build AI systems"
           align="left"
         />
 
         <div className="grid lg:grid-cols-[1fr_1fr] gap-16">
-          {/* Left: Bio */}
+          {/* Left: Story + capabilities */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="space-y-5 text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I automate business operations by connecting tools, APIs, and AI
-                into workflows that run themselves. My strength is taking a
-                manual process that eats hours of someone&apos;s time and turning
-                it into an{" "}
+                I spent{" "}
+                <span className="text-foreground">8 years working inside coaching institutes</span>,
+                watching smart people burn hours on scheduling, fee tracking,
+                question paper formatting, and data entry. The same tasks, every
+                week, eating up time that should have gone into teaching.
+              </p>
+              <p>
+                When I discovered AI and automation, everything clicked. All that
+                grunt work? It could run itself. I could{" "}
                 <span className="text-foreground">
-                  automated pipeline that works 24/7
+                  build systems that handle the repetitive stuff
                 </span>{" "}
-                with zero human intervention.
-              </p>
-              <p>
-                I work primarily with{" "}
-                <span className="text-foreground">n8n</span> for workflow
-                automation and integrate AI models (OpenAI, Claude, Gemini) to
-                add intelligence to every step. From scraping and research agents
-                to proposal generators and meeting capture systems, I build
-                automation that saves real money.
-              </p>
-              <p>
-                I also built{" "}
-                <span className="text-foreground">Institura</span>, a full
-                production SaaS platform for coaching institutes, with AI
-                timetable generation, question paper creation, online testing,
-                and Razorpay billing. Built it end-to-end using Claude Code.
+                so people focus on what actually matters.
               </p>
             </div>
 

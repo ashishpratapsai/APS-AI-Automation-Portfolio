@@ -25,23 +25,6 @@
   --radius: 0.75rem;
 }
 
-.dark {
-  --background: #060b0e;
-  --foreground: #e8eaed;
-  --primary: #e8735a;
-  --primary-hover: #f0896e;
-  --primary-foreground: #ffffff;
-  --secondary: #d4654e;
-  --secondary-hover: #e8735a;
-  --card: rgba(255, 255, 255, 0.02);
-  --card-foreground: #e8eaed;
-  --muted: rgba(255, 255, 255, 0.04);
-  --muted-foreground: rgba(255, 255, 255, 0.4);
-  --border: rgba(255, 255, 255, 0.06);
-  --ring: #e8735a;
-  --accent: #e8735a;
-  --accent-foreground: #ffffff;
-}
 
 /* ============================================
    THEME BRIDGE: Tailwind v4 @theme inline
@@ -81,15 +64,6 @@ body {
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
 }
 
-/* Dark mode subtle radial gradient background */
-.dark body {
-  background: radial-gradient(
-    ellipse 80% 50% at 50% 0%,
-    rgba(15, 30, 25, 0.6) 0%,
-    #060b0e 70%
-  );
-  background-attachment: fixed;
-}
 
 /* ============================================
    GLASSMORPHISM
@@ -102,10 +76,6 @@ body {
   border: 1px solid var(--border);
 }
 
-.dark .glass {
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
 
 /* ============================================
    GRADIENT TEXT
@@ -132,10 +102,6 @@ body {
   border-color: rgba(232, 115, 90, 0.25);
 }
 
-.dark .card-hover:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 40px rgba(232, 115, 90, 0.04);
-  border-color: rgba(232, 115, 90, 0.15);
-}
 
 /* ============================================
    ANIMATIONS
@@ -218,7 +184,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.15);
   border-radius: 3px;
 }
 
@@ -281,12 +247,4 @@ body {
 .orbit-ring {
   border: 1px dashed rgba(255, 255, 255, 0.08);
   border-radius: 50%;
-}
-
-/* ============================================
-   ICON INVERT FOR DARK MODE
-   ============================================ */
-
-.dark .icon-invert {
-  filter: brightness(0) invert(1);
 }

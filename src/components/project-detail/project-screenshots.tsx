@@ -15,7 +15,7 @@ export function ProjectScreenshots({ project }: { project: Project }) {
       transition={{ duration: 0.5 }}
     >
       <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">
-        Screenshots
+        Wireframes
       </h2>
 
       <div className="space-y-4">

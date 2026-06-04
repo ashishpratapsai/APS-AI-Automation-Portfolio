@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { SITE_CONFIG } from "@/lib/constants";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -78,12 +78,10 @@ export function Navbar() {
                   </button>
                 );
               })}
-              <ThemeToggle />
             </div>
 
             {/* Mobile */}
             <div className="flex md:hidden items-center gap-2">
-              <ThemeToggle />
               <button
                 onClick={() => setIsMobileOpen(!isMobileOpen)}
                 className="h-8 w-8 flex items-center justify-center"

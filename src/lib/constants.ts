@@ -5,6 +5,7 @@ export const SITE_CONFIG = {
     "I build intelligent automation workflows that save businesses hours every week.",
   url: "https://ashishpratapsingh.com",
   email: "ashishprataps.ai@gmail.com",
+  phone: "+91 7983885860",
   location: "Mumbai, India",
   socials: {
     github: "https://github.com/ashishpratapsai",
@@ -18,7 +19,6 @@ export const NAV_ITEMS = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ] as const;
 

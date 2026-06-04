@@ -73,10 +73,10 @@ export const projects: Project[] = [
     ],
     results: [
       {
-        label: "Annual staff cost replaced",
+        label: "Annual staff cost saved",
         value: "Rs 8-10L/yr",
         description:
-          "A mid-size coaching institute typically spends Rs 8-10 lakh/year on a dedicated admin (Rs 15-20K/mo), a typist for question papers (Rs 10-15K/mo), and staff time on scheduling, fee tracking, and attendance. Institura replaces all three roles with automation.",
+          "A mid-size coaching institute typically spends Rs 8-10 lakh/year on a dedicated admin (Rs 15-20K/mo), a typist for question papers (Rs 10-15K/mo), and staff time on scheduling, fee tracking, and attendance. Institura automates all three roles.",
       },
       {
         label: "Timetable generation",
@@ -85,16 +85,16 @@ export const projects: Project[] = [
           "Claude AI generates a conflict-free timetable in under a minute. Manually, this takes a senior admin 10-15 hours per term. At Rs 300/hr, that is Rs 3,000-4,500 saved per scheduling cycle.",
       },
       {
-        label: "Typist replaced",
-        value: "Full",
+        label: "Question paper creation",
+        value: "Days to minutes",
         description:
-          "The AI Question Paper Creator replaces a full-time typist (Rs 10-15K/month, Rs 1.2-1.8L/year). Teachers upload a document, get a print-ready paper with logo, watermark, and auto-corrected formatting in minutes instead of days.",
+          "Teachers upload a PDF or DOCX, get a print-ready question paper with institute logo, watermark, and auto-corrected formatting. What used to take a typist 2-3 days now happens in minutes.",
       },
       {
-        label: "Fee collection errors",
-        value: "Near zero",
+        label: "Modules shipped",
+        value: "30+",
         description:
-          "Component-wise GST tracking, automated installment management, and Razorpay integration eliminate the manual fee register. No more miscalculated GST, lost receipts, or untracked payments.",
+          "Fees with GST, online testing (JEE/NEET/Board), attendance, payroll, homework, syllabus tracking, expense management, and a partner sales CRM. One platform for the entire institute.",
       },
     ],
     liveUrl: "https://institura.com",
@@ -462,17 +462,17 @@ export const projects: Project[] = [
     slug: "ai-proposal-generator",
     title: "AI Proposal Generator — Meeting to Proposal in 30 Seconds",
     tagline:
-      "An AI system that listens to your sales calls, extracts what the client needs, matches it to your service catalog, and generates a fully branded PandaDoc proposal with dynamic pricing, in 30 seconds flat. No deal waits for a proposal again.",
+      "An AI system that listens to your sales calls, extracts what the client needs, matches it to your service catalog, and generates a fully branded PandaDoc proposal with dynamic pricing, in 30 seconds flat.",
     description:
-      "Built for a growing agency that was losing deals because proposals took 2-3 days to send after a sales call. The 96-node n8n workflow connects meeting transcription (Fathom), AI extraction (Anthropic Claude + OpenRouter), product catalog matching, PandaDoc proposal creation with dynamic pricing tables, contract tracking, Stripe payment processing, and automated client onboarding (Google Drive + Gmail). The moment a sales call ends, the system generates and sends a proposal before the prospect even closes their laptop.",
+      "Built for a growing agency that was losing deals because proposals took 2-3 days to send after a sales call. The system connects meeting transcription, AI extraction, catalog matching, proposal creation, contract tracking, payment processing, and client onboarding into a single automated pipeline.",
     featured: false,
     category: "Sales Automation",
     heroImage: "/images/projects/uplift-sales-os-hero.webp",
     screenshots: [],
     problem:
-      "After every sales call, someone has to manually write a proposal: review their notes, figure out which services the client needs, look up pricing, create a PandaDoc document, add the right pricing tables, format it, and send it. This takes 2-3 hours per proposal and usually happens 1-3 days after the call. By then, the prospect has gone cold, talked to a competitor, or lost urgency. Studies show that responding within 5 minutes of a sales conversation makes you 21x more likely to close. At 20+ sales conversations per month, even a 10% close rate improvement on Rs 1-5L deals is Rs 2-10L in additional annual revenue. The bottleneck isn't the sales conversation, it's the time between the conversation and the proposal.",
+      "After every sales call, someone has to manually write a proposal: review their notes, figure out which services the client needs, look up pricing, create a PandaDoc document, add the right pricing tables, format it, and send it. This takes 2-3 hours per proposal and usually happens 1-3 days after the call. By then, the prospect has gone cold, talked to a competitor, or lost urgency. The bottleneck isn't the sales conversation, it's the time between the conversation and the proposal.",
     solution:
-      "Built a 96-node system that eliminates the gap between call and proposal entirely. When a sales call ends, Fathom sends the full transcript via webhook. An AI agent (Anthropic Claude) reads the transcript and extracts: what services the client needs, their budget range, timeline, company details, and decision-maker info. A second AI agent matches the extracted requirements against the company's service catalog (fetched via PandaDoc API) to select the right line items and pricing. The system then creates a fully branded PandaDoc proposal with dynamic pricing tables, correct service descriptions, and client-specific details, all within 30 seconds. The proposal link is saved to the Airtable CRM, and the sales rep gets notified. After signing, PandaDoc webhooks track contract status, Stripe handles payment, Google Drive creates a branded client folder with permissions, and Gmail sends an onboarding email with the folder link. End-to-end: call ends, proposal sent, contract signed, payment collected, client onboarded, zero manual steps.",
+      "The system collects context from multiple client calls and internal discussions, understands the timeline of each conversation, identifies which points are still relevant vs. outdated, and generates an accurate proposal based on the latest state of the deal. When a sales call ends, Fathom sends the full transcript. AI extracts: services needed, budget range, timeline, company details, and decision-maker info. A second AI agent matches requirements against the service catalog (via PandaDoc API) and creates a branded proposal with dynamic pricing tables. After signing, the system handles payment via Stripe, creates a branded Google Drive folder, and sends an onboarding email. End-to-end: call ends, proposal sent, contract signed, payment collected, client onboarded.",
     workflow: [
       {
         title: "Meeting transcript capture",
@@ -536,7 +536,7 @@ export const projects: Project[] = [
         label: "Tools orchestrated",
         value: "8",
         description:
-          "Fathom, Airtable, PandaDoc, Stripe, Gmail, Google Drive, Calendly, Instantly. 96 nodes. One workflow. Zero manual steps.",
+          "Fathom, Airtable, PandaDoc, Stripe, Gmail, Google Drive, Calendly, Instantly. One workflow. Zero manual steps.",
       },
     ],
     techStack: [
