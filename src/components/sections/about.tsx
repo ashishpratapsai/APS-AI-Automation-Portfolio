@@ -4,11 +4,12 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const capabilities = [
-  "n8n workflow design and deployment (webhooks, scheduled flows, error handling, conditional logic, sub-workflows)",
-  "AI agent integration (connecting OpenAI, Claude, Gemini APIs into business workflows)",
-  "Multi-tool orchestration (connecting 5-10+ tools in a single automated pipeline with zero manual steps)",
-  "Business process automation (lead gen, proposal generation, meeting capture, content creation, onboarding)",
-  "Web scraping and research automation at scale",
+  "End-to-end content pipelines (research, scripting, thumbnails, captions, metadata, all automated)",
+  "AI agent integration (OpenAI, Claude, Gemini APIs wired into real business workflows)",
+  "Full-stack SaaS development (built a 30+ module production platform from scratch)",
+  "Multi-tool orchestration (connecting 5-10+ tools in a single pipeline with zero manual steps)",
+  "n8n workflow design and deployment (webhooks, scheduled flows, error handling, sub-workflows)",
+  "Web scraping and prospect research automation at scale",
 ];
 
 interface Tool {
@@ -113,19 +114,50 @@ export function About() {
           >
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I spent{" "}
-                <span className="text-foreground">8 years working inside coaching institutes</span>,
-                watching smart people burn hours on scheduling, fee tracking,
-                question paper formatting, and data entry. The same tasks, every
-                week, eating up time that should have gone into teaching.
+                We get maybe 80 years. Most of that time, people spend doing the
+                same thing over and over:{" "}
+                <span className="text-foreground">
+                  work that a computer could handle in seconds
+                </span>
+                . I think about that a lot. If something can be delegated to a
+                system that never gets tired, never forgets, and runs 24/7, why
+                are humans still doing it?
               </p>
               <p>
-                When I discovered AI and automation, everything clicked. All that
-                grunt work? It could run itself. I could{" "}
+                That thinking comes from real experience. I spent{" "}
+                <span className="text-foreground">8 years inside coaching institutes</span>,
+                watching talented people burn hours on scheduling, fee tracking,
+                and question paper formatting instead of teaching. On the side, I
+                was{" "}
+                <span className="text-foreground">creating content for 3 years</span>,
+                losing 12-20 hours every week to research, scripting, thumbnails,
+                and metadata before I could even hit record.
+              </p>
+              <p>
+                So I stopped accepting that as normal. I built an{" "}
                 <span className="text-foreground">
-                  build systems that handle the repetitive stuff
+                  autonomous content pipeline
                 </span>{" "}
-                so people focus on what actually matters.
+                that handles research, scripting, thumbnail generation, captions,
+                and YouTube metadata across two YouTube channels and LinkedIn. I
+                built a{" "}
+                <span className="text-foreground">
+                  second brain in Notion
+                </span>{" "}
+                that captures every idea, task, and project. Then I connected it
+                all to AI through an{" "}
+                <span className="text-foreground">
+                  AI Operating System
+                </span>{" "}
+                where Claude has a live map of my priorities, content pipeline,
+                journals, and decision history, so it works with full context,
+                not generic prompts.
+              </p>
+              <p>
+                Then I did the same for institute operations: a full SaaS platform
+                with 30+ modules. Now I do it for others. Find the repetitive work
+                that eats your time, and replace it with a system that frees you
+                up to do what actually matters.
               </p>
             </div>
 
