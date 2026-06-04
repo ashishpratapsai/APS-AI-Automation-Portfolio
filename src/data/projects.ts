@@ -14,6 +14,7 @@ export const projects: Project[] = [
     featured: true,
     category: "SaaS Product",
     heroImage: "/images/projects/institura-hero.webp",
+    demoVideo: "8p1USTOR5DY",
     screenshots: [
       "/images/projects/institura-timetable.webp",
       "/images/projects/institura-fees.webp",

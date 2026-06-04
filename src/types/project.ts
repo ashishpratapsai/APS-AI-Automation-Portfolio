@@ -24,6 +24,7 @@ export interface Project {
   integrations: string[];
   results: ProjectMetric[];
   diagramImage?: string;
+  demoVideo?: string;
   liveUrl?: string;
   githubUrl?: string;
   techStack: string[];

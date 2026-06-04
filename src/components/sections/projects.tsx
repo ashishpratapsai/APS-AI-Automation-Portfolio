@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, Play } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { GlowCard } from "@/components/ui/glow-card";
 import { projects, getFeaturedProject } from "@/data/projects";
@@ -25,7 +25,7 @@ function FeaturedProject() {
     >
       <Link href={`/projects/${project.slug}`} className="block group">
         <GlowCard className="grid lg:grid-cols-[1fr_1fr] gap-8 p-6 sm:p-8 rounded-2xl">
-          <div className="rounded-xl overflow-hidden bg-muted/50">
+          <div className="relative rounded-xl overflow-hidden bg-muted/50">
             <Image
               src={project.heroImage}
               alt={project.title}
@@ -34,6 +34,13 @@ function FeaturedProject() {
               className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
+            {project.demoVideo && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/90 text-primary-foreground shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Play className="h-7 w-7 ml-1" fill="currentColor" />
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="flex flex-col justify-center">
