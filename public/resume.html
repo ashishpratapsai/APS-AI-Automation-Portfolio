@@ -29,6 +29,54 @@
       box-shadow: 0 2px 20px rgba(0,0,0,0.1);
     }
 
+    /* ===== MOBILE ===== */
+    @media (max-width: 800px) {
+      .page {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 20px 16px;
+        box-shadow: none;
+        overflow: visible;
+      }
+      .header {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+      }
+      .headshot {
+        margin-left: 0;
+        width: 100px;
+        height: 100px;
+      }
+      .name { font-size: 26px; }
+      .subtitle { font-size: 10px; letter-spacing: 3px; }
+      .contact-bar {
+        flex-direction: column;
+        gap: 4px;
+        padding: 8px 0;
+      }
+      .contact-bar .contact-item {
+        border-right: none !important;
+        padding: 2px 0;
+      }
+      .edu-skills-header {
+        flex-direction: column;
+        gap: 2px;
+      }
+      .edu-skills-row {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .edu-col { flex: none; }
+      .job-title { font-size: 11px; }
+      .job-header { flex-direction: column; gap: 2px; }
+      .tools-grid { flex-direction: column; gap: 4px; }
+      .section-title { font-size: 10px; letter-spacing: 3px; }
+    }
+
+    /* ===== PRINT ===== */
     @media print {
       body { background: #fff; margin: 0; }
       .page {
