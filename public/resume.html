@@ -23,7 +23,7 @@
       width: 210mm;
       height: 297mm;
       margin: 20px auto;
-      padding: 28px 32px 20px;
+      padding: 22px 28px 16px;
       background: #fff;
       overflow: hidden;
       box-shadow: 0 2px 20px rgba(0,0,0,0.1);
@@ -33,11 +33,19 @@
       body { background: #fff; margin: 0; }
       .page {
         margin: 0;
-        padding: 24px 28px 16px;
+        padding: 16px 20px 12px;
         width: 100%;
-        height: auto;
+        height: 100vh;
         box-shadow: none;
+        overflow: hidden;
       }
+      .section-title { margin-top: 8px; }
+      .job { margin-bottom: 5px; }
+      .job-header { margin-top: 4px; }
+      .summary { font-size: 9.5px; line-height: 1.45; }
+      .job-bullets li { font-size: 9px; line-height: 1.4; margin-bottom: 1px; }
+      .name { font-size: 28px; }
+      .headshot { width: 80px; height: 80px; }
     }
 
     /* ===== COLORS (matching portfolio orange) ===== */
@@ -83,7 +91,7 @@
     }
 
     .linkedin-line {
-      margin-top: 12px;
+      margin-top: 10px;
     }
 
     .linkedin-line a {
@@ -136,19 +144,19 @@
       letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--accent);
-      margin-top: 12px;
+      margin-top: 10px;
       margin-bottom: 2px;
-      padding-bottom: 4px;
+      padding-bottom: 3px;
       border-bottom: 2.5px solid;
       border-image: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent-pale)) 1;
     }
 
     /* ===== SUMMARY ===== */
     .summary {
-      font-size: 10px;
+      font-size: 9.5px;
       color: var(--text);
-      line-height: 1.55;
-      margin-top: 5px;
+      line-height: 1.5;
+      margin-top: 4px;
       text-align: justify;
     }
 
@@ -161,7 +169,7 @@
     .edu-skills-header {
       display: flex;
       align-items: baseline;
-      margin-top: 12px;
+      margin-top: 10px;
       padding-bottom: 4px;
       border-bottom: 2.5px solid;
       border-image: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent-pale)) 1;
@@ -240,14 +248,14 @@
     }
 
     /* ===== WORK EXPERIENCE ===== */
-    .job { margin-bottom: 8px; }
+    .job { margin-bottom: 6px; }
     .job:last-child { margin-bottom: 0; }
 
     .job-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     .job-title {
@@ -284,9 +292,9 @@
       position: relative;
       padding-left: 12px;
       margin-bottom: 2px;
-      font-size: 9.5px;
+      font-size: 9px;
       color: var(--text);
-      line-height: 1.45;
+      line-height: 1.4;
     }
 
     .job-bullets li::before {
