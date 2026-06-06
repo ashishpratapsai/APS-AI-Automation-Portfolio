@@ -198,44 +198,51 @@ export const projects: Project[] = [
   // PROJECT 3: AI Content Creation System for Creators
   {
     slug: "ai-content-creation-system",
-    title: "AI Content Creation System — From Any Inspiration to Production-Ready Script",
+    title: "AI Content Creation System — From Idea to Published Video, Fully Automated",
     tagline:
-      "Drop a YouTube link, Instagram post, voice note, image, or text idea into Slack. Get back a full video script in your voice, 5 thumbnail titles, captions, and YouTube metadata. The entire content research-to-script pipeline, automated.",
+      "A full content operating system: drop any inspiration into Slack, get back a production-ready script, shooting guide, B-roll list, 5 thumbnail titles, captions, YouTube metadata, and editor handoff. From idea to published video with zero manual steps.",
     description:
-      "Built for content creators who spend more time researching and scripting than actually creating. This 43-node n8n workflow turns any form of inspiration into a production-ready content package. See a great YouTube video? Paste the link. Have a thought in the shower? Send a voice note. Spot an interesting Instagram post? Drop the URL. The system figures out what you sent, processes it (transcribes audio, analyzes images, scrapes videos, extracts text), researches the topic, and generates a complete script written in the creator's voice with hook, body, CTA, thumbnail titles, and captions.",
+      "Built for content creators who spend more time on pre-production and coordination than actually creating. This is not just a script generator. It is a complete personal branding operating system built on n8n and Airtable. The system handles the entire lifecycle: inspiration capture (5 input types via Slack), AI script generation in the creator's voice, shooting guides, B-roll recommendations, thumbnail titles, YouTube descriptions, Instagram captions, editor communication with automatic Slack notifications, and even AI avatar video generation via HeyGen. Multiple specialized AI agents handle different parts of the pipeline. Everything is tracked in an Airtable CRM so no idea, draft, or edit ever gets lost.",
     featured: false,
     category: "Content Automation",
     heroImage: "/images/projects/slack-pipeline-hero.webp",
-    screenshots: [],
+    demoVideo: "nHszRaV4EjU",
+    screenshots: [
+      "/images/projects/content-system-airtable-crm.png",
+      "/images/projects/content-system-heygen-workflow.png",
+      "/images/projects/content-system-editor-workflow.png",
+      "/images/projects/content-system-broll-agent.png",
+      "/images/projects/content-system-n8n-subflows.png",
+    ],
     problem:
-      "- Creators producing 3-5 videos/week spend **60-70% of their time** on everything except creating\n- Finding inspiration, researching, transcribing references, writing scripts, crafting hooks, thumbnail titles, captions, YouTube descriptions\n- A single video's pre-production takes **3-5 hours**\n- At 4 videos/week, that's **12-20 hours/week** on tasks that can be automated\n- The real cost isn't just time. It's the **videos that never get made** because the creator ran out of bandwidth",
+      "- Creators producing 3-5 videos/week spend **60-70% of their time** on everything except creating\n- Pre-production per video: research, scripting, hooks, titles, captions, descriptions, shooting notes, B-roll planning. **3-5 hours each**\n- Editor communication is fragmented: WhatsApp messages, email threads, verbal instructions. Details get lost, revisions multiply\n- At 4 videos/week, that's **12-20 hours/week** on tasks that can be automated\n- The real cost isn't just time. It's the **videos that never get made** because the creator ran out of bandwidth\n- Creators with editors waste additional hours on back-and-forth coordination for every single video",
     solution:
-      "- **5 input types accepted** — YouTube URL, Instagram post, voice note, image, or plain text idea. Drop it into a Slack channel\n- Workflow **auto-detects input type** and routes through the right processing branch\n- YouTube/Instagram URLs scraped via **Apify** for original script/caption/transcript\n- Audio transcribed via **OpenAI Whisper**, images analyzed via **Google Gemini**\n- Script Agent (**Anthropic Claude**) generates a complete video script: 3-second hook, S.U.C.C.E.S. storytelling body, clear CTA\n- Cover Title Agent generates **5 viral thumbnail titles** optimized for clicks\n- Everything saved to **Airtable** as a structured content record\n- Slack notifications at every stage. Creator picks up from Slack without opening a single other tool",
+      "- **5 input types accepted** — YouTube URL, Instagram post, voice note, image, or plain text idea. Drop it into a Slack channel\n- Workflow **auto-detects input type** and routes through the right processing branch\n- YouTube/Instagram URLs scraped via **Apify** for original script/caption/transcript\n- Audio transcribed via **OpenAI Whisper**, images analyzed via **Google Gemini**\n- **6 specialized AI agents** work in sequence:\n  - **Script Agent** (Claude) generates a complete video script: 3-second hook, S.U.C.C.E.S. storytelling body, clear CTA, written in the creator's natural voice\n  - **Cover Title Agent** generates 5 viral thumbnail titles optimized for clicks\n  - **YouTube Title Agent** creates SEO-optimized video titles\n  - **Description Agent** writes full YouTube descriptions with timestamps\n  - **Caption Agent** generates platform-specific captions (Instagram, YouTube Shorts)\n  - **B-Roll Agent** provides a detailed B-roll list and shooting guide for how to film the video\n- **Editor communication system** — creator uploads raw footage to Airtable, editor gets automatic Slack notification with editing instructions, charges are tracked\n- **AI avatar generation** via HeyGen for creators who want AI-generated talking head videos\n- Full **Airtable CRM** tracks every piece of content: scripts, titles, captions, edit status, editor charges. Nothing gets lost",
     workflow: [
       {
-        title: "Slack input capture",
+        title: "Slack input capture and routing",
         description:
-          "Monitors a dedicated Slack channel for messages and file uploads. Accepts 5 input types: plain text ideas, audio voice notes, images with context, YouTube URLs, and Instagram post URLs. Sends a 'Process Started' notification immediately.",
+          "Monitors a dedicated Slack channel for messages and file uploads. Accepts 5 input types: plain text ideas, audio voice notes, images with context, YouTube URLs, and Instagram post URLs. Sends a 'Process Started' notification immediately. Switch node categorizes the input and routes it to the correct processing branch.",
       },
       {
-        title: "Intelligent content routing",
+        title: "Reference extraction and transcription",
         description:
-          "Switch node detects what was sent. Text goes straight to scripting. Audio files are downloaded from Slack and transcribed via OpenAI Whisper. Images are analyzed via Google Gemini for visual context. YouTube URLs trigger Apify to extract the video transcript. Instagram URLs trigger a separate Apify actor for post data.",
+          "YouTube URLs: Apify scrapes the full video, extracts the transcript and original script structure. Instagram URLs: extracts caption, hashtags, and engagement context. Audio: OpenAI Whisper transcribes voice notes. Images: Google Gemini analyzes visual context. All processed into clean text for the AI agents.",
       },
       {
-        title: "Reference research and extraction",
+        title: "Multi-agent content generation",
         description:
-          "For YouTube: Apify scrapes the full video, extracts the transcript, and pulls the original script structure. For Instagram: extracts the caption, hashtags, and engagement context. For audio: full transcription with speaker detection. All processed into clean text for the AI agents.",
+          "Six specialized AI agents process the material in sequence. Script Agent (Anthropic Claude) generates a complete video script using the S.U.C.C.E.S. framework in the creator's authentic voice. Cover Title Agent creates 5 viral thumbnail titles. YouTube Title Agent and Description Agent handle SEO metadata. Caption Agent writes platform-specific captions. B-Roll Agent generates a detailed shooting guide with specific B-roll recommendations for the editor.",
       },
       {
-        title: "AI script generation in creator's voice",
+        title: "Airtable CRM and content package",
         description:
-          "Script Agent (Anthropic Claude) takes the processed reference material and generates a complete video script: 3-second hook, storytelling body using the S.U.C.C.E.S. framework (Simple, Unexpected, Concrete, Credible, Emotional), and a clear CTA. Written in the creator's natural speaking style, not AI-sounding. Cover Title Agent generates 5 ALL CAPS viral thumbnail titles (4-7 words, optimized for clicks).",
+          "Every output is saved to a structured Airtable database: script draft, 5 thumbnail titles, YouTube description, Instagram caption, YouTube Shorts caption, shooting guide, B-roll list, and original reference material. Each content piece is tagged by type and status. The creator has a complete, searchable library of every idea and its production state.",
       },
       {
-        title: "Content package delivery",
+        title: "Editor handoff and tracking",
         description:
-          "Complete content package saved to Airtable: script draft, 5 thumbnail titles, original reference material, content type tag. Slack notification sent with the finished output. Creator reviews and records directly from the script — no tool switching, no copy-pasting between apps.",
+          "Creator uploads raw footage to Airtable. The editor gets an automatic Slack notification with the video file, editing instructions, and context from the script. Edit status, revision rounds, and editor charges are tracked in Airtable. No WhatsApp threads, no verbal instructions, no lost details. The entire creator-editor workflow runs through the system.",
       },
     ],
     integrations: [
@@ -246,31 +253,32 @@ export const projects: Project[] = [
       "Anthropic Claude",
       "Apify",
       "Airtable",
+      "HeyGen",
     ],
     results: [
       {
         label: "Research-to-script time",
         value: "3-5 hrs to 5 min",
         description:
-          "The entire pre-production process (finding inspiration, researching, transcribing references, writing the script, creating titles) compressed from hours to minutes per video.",
+          "The entire pre-production process (finding inspiration, researching, transcribing references, writing the script, creating titles, captions, descriptions, shooting guide) compressed from hours to minutes per video.",
       },
       {
         label: "Creator bandwidth freed",
-        value: "12-20 hrs/week",
+        value: "10-20 hrs/week",
         description:
-          "At 4 videos/week, the creator saves 12-20 hours of pre-production time. That time goes into actually creating content, taking more brand deals, or scaling the channel.",
+          "At 4 videos/week, the creator saves 10-20 hours of pre-production and editor coordination time. That time goes into actually creating content, taking more brand deals, or scaling the channel.",
       },
       {
-        label: "Revenue impact",
-        value: "Rs 2-5L/mo",
+        label: "AI agents orchestrated",
+        value: "6",
         description:
-          "A creator producing 4 videos/week instead of 2 (because pre-production is automated) doubles their output. More content = more views = more brand deals. At Rs 50K-1L per brand deal, even 2-3 additional deals per month is Rs 1-3L in extra revenue.",
+          "Script, cover title, YouTube title, description, caption, and B-roll agents. Each specialized for a different part of the content pipeline. All triggered from a single Slack message.",
       },
       {
         label: "Input types handled",
         value: "5",
         description:
-          "YouTube URL, Instagram URL, voice note, image, plain text. Any format of inspiration turns into a script. No idea is too raw or too rough.",
+          "YouTube URL, Instagram URL, voice note, image, plain text. Any format of inspiration turns into a full production package. No idea is too raw or too rough.",
       },
     ],
     techStack: [
@@ -281,6 +289,7 @@ export const projects: Project[] = [
       "Anthropic Claude",
       "Apify",
       "Airtable",
+      "HeyGen",
     ],
   },
 
@@ -463,42 +472,48 @@ export const projects: Project[] = [
     slug: "ai-proposal-generator",
     title: "AI Proposal Generator — Meeting to Proposal in 30 Seconds",
     tagline:
-      "An AI system that listens to your sales calls, extracts what the client needs, matches it to your service catalog, and generates a fully branded PandaDoc proposal with dynamic pricing, in 30 seconds flat.",
+      "An AI system that listens to your sales calls, classifies internal vs. client meetings, aggregates context from multiple conversations, and generates a fully branded PandaDoc proposal with dynamic pricing. Smart enough to handle catalog gaps and manual overrides.",
     description:
-      "Built for a growing agency that was losing deals because proposals took 2-3 days to send after a sales call. The system connects meeting transcription, AI extraction, catalog matching, proposal creation, contract tracking, payment processing, and client onboarding into a single automated pipeline.",
+      "Built for a growing agency that was losing deals because proposals took 2-3 days to send after a sales call. This is not a simple transcript-to-document converter. The system intelligently classifies every meeting as internal or client-facing, saves internal meeting notes separately, and for client meetings, aggregates context across multiple calls with the same client. When you trigger a proposal, the AI smartly selects which conversation points are still relevant, matches them against a service catalog (creating custom pricing for items not in the catalog), and generates a fully branded PandaDoc proposal. Manual CRM overrides let you add context the AI didn't capture. After signing: Stripe payment, Google Drive folder, onboarding email, all automatic.",
     featured: false,
     category: "Sales Automation",
     heroImage: "/images/projects/uplift-sales-os-hero.webp",
-    screenshots: [],
+    demoVideo: "SMlRH6yax4I",
+    screenshots: [
+      "/images/projects/proposal-system-n8n-workflow.png",
+      "/images/projects/proposal-system-pandadoc-template.png",
+      "/images/projects/proposal-system-call-recordings.png",
+      "/images/projects/proposal-system-call-tracking.png",
+    ],
     problem:
-      "- After every sales call, someone manually writes a proposal: review notes, look up pricing, create PandaDoc doc, format it, send it\n- This takes **2-3 hours per proposal** and usually happens **1-3 days after the call**\n- By then, the prospect has gone cold, talked to a competitor, or lost urgency\n- Responding within 5 minutes makes you **21x more likely to close**\n- The bottleneck isn't the sales conversation. It's the **time between the conversation and the proposal**",
+      "- After every sales call, someone manually writes a proposal: review notes, look up pricing, create PandaDoc doc, format it, send it\n- This takes **2-3 hours per proposal** and usually happens **1-3 days after the call**\n- By then, the prospect has gone cold, talked to a competitor, or lost urgency\n- Responding within 5 minutes makes you **21x more likely to close**\n- Proposals based on a single call miss context from **earlier conversations** with the same client\n- The bottleneck isn't the sales conversation. It's the **time between the conversation and the proposal**",
     solution:
-      "- System collects context from **multiple client calls and internal discussions**\n- Understands the **timeline of each conversation**, identifies which points are still relevant vs. outdated\n- When a call ends, **Fathom sends the full transcript** via webhook\n- AI extracts: **services needed, budget range, timeline, company details, decision-maker info**\n- Second AI agent matches requirements against the **service catalog via PandaDoc API**\n- Creates a **branded proposal with dynamic pricing tables** in 30 seconds\n- After signing: **Stripe payment**, branded Google Drive folder, onboarding email sent automatically\n- End-to-end: call ends, proposal sent, contract signed, payment collected, client onboarded. **Zero manual steps**",
+      "- **Fathom webhook** captures every call transcript the moment it ends\n- AI **classifies each meeting** as internal or client-facing by analyzing participant domains. Internal meetings get their own note storage, client meetings feed the proposal pipeline\n- System **aggregates multiple meetings** with the same client. The AI smartly selects which points are still relevant vs. outdated across the full conversation history\n- AI extracts: **services needed, budget range, timeline, company details, decision-maker info**\n- **Manual override via CRM** — write commands in the Airtable CRM to add, modify, or overwrite AI-extracted content before generation\n- AI agent matches requirements against the **service catalog via PandaDoc API**. If an item isn't in the catalog, the AI **creates custom pricing** instead of failing\n- Creates a **branded proposal from a template** with dynamic pricing tables, package selection, and all extracted values filled in automatically\n- Separate **pricing update flow** for post-generation modifications\n- After signing: **Stripe payment**, branded Google Drive folder, onboarding email sent automatically\n- End-to-end: call ends, proposal sent, contract signed, payment collected, client onboarded. **Zero manual steps**",
     workflow: [
       {
-        title: "Meeting transcript capture",
+        title: "Meeting capture and classification",
         description:
-          "Fathom webhook fires when a sales call ends. Full transcript, participant list, and meeting metadata land in the workflow. An Airtable webhook also listens for CRM triggers (proposal request or contract update).",
+          "Fathom webhook fires when any call ends. Full transcript, participant list, and meeting metadata land in the workflow. AI classifies the meeting as internal or client-facing by analyzing participant domains. Internal meetings get notes saved separately. Client meetings proceed to the proposal pipeline.",
       },
       {
-        title: "AI requirement extraction",
+        title: "Multi-meeting context aggregation",
         description:
-          "AI Information Extractor (Anthropic Claude) reads the full call transcript and pulls out: services discussed, client pain points, budget indicators, timeline, company name, and decision-maker details. Structured output, not free text.",
+          "For client meetings, the system stores call summaries with the contact record in the CRM. When a proposal is triggered, the AI aggregates context from all previous meetings with that client, identifying which discussion points are still relevant and which are outdated. The proposal reflects the full relationship, not just the last call.",
       },
       {
-        title: "Catalog matching + proposal creation",
+        title: "AI extraction + manual override",
         description:
-          "Workflow fetches the service catalog from PandaDoc API. An AI Agent matches extracted requirements to catalog items (service names, pricing tiers). Creates a PandaDoc proposal document with the client's name, matched service line items, and dynamic pricing tables. Updates the pricing table via PandaDoc API. Proposal link saved to CRM.",
+          "AI extracts services needed, budget range, timeline, company details, and decision-maker info from the aggregated transcripts. The CRM includes manual override fields where you can add context, correct the AI, or inject specific instructions that take priority over the transcript data.",
       },
       {
-        title: "Contract and payment tracking",
+        title: "Catalog matching + proposal generation",
         description:
-          "PandaDoc webhook detects when the client signs. CRM updated with contract status. Stripe Trigger captures payment events and updates payment status in real time. Welcome email with onboarding link sent via Gmail automatically.",
+          "Workflow fetches the service catalog from PandaDoc API. AI agent matches extracted requirements to catalog items (service names, pricing tiers). For items not in the catalog, the AI generates custom pricing. Fills a branded PandaDoc template with all values: client name, selected packages, pricing tables, scope details. A separate pricing update flow handles post-generation modifications. Proposal link saved to CRM.",
       },
       {
-        title: "Client onboarding",
+        title: "Contract, payment, and onboarding",
         description:
-          "When the onboarding call is booked via Calendly, the workflow creates a branded Google Drive folder, shares it with the client (writer permissions), and sends a professional HTML email with the folder access link. CRM record marked complete. Zero manual handoff.",
+          "PandaDoc webhook detects when the client signs. CRM updated with contract status. Stripe Trigger captures payment events in real time. Welcome email sent via Gmail automatically. When the onboarding call is booked via Calendly, a branded Google Drive folder is created, shared with the client, and a professional onboarding email is sent. Zero manual handoff from proposal to active client.",
       },
     ],
     integrations: [
