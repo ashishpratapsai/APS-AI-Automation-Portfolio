@@ -208,6 +208,7 @@ export const projects: Project[] = [
     heroImage: "/images/projects/slack-pipeline-hero.webp",
     demoVideo: "nHszRaV4EjU",
     screenshots: [
+      "/images/projects/slack-pipeline-hero.webp",
       "/images/projects/content-system-airtable-crm.png",
       "/images/projects/content-system-heygen-workflow.png",
       "/images/projects/content-system-editor-workflow.png",
@@ -480,6 +481,7 @@ export const projects: Project[] = [
     heroImage: "/images/projects/uplift-sales-os-hero.webp",
     demoVideo: "SMlRH6yax4I",
     screenshots: [
+      "/images/projects/uplift-sales-os-hero.webp",
       "/images/projects/proposal-system-n8n-workflow.png",
       "/images/projects/proposal-system-pandadoc-template.png",
       "/images/projects/proposal-system-call-recordings.png",
