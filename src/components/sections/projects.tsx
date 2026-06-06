@@ -133,7 +133,7 @@ function HighlightedProject({
       <Link href={`/projects/${project.slug}`} className="block group">
         <GlowCard className="p-5 sm:p-6 rounded-2xl">
           {/* Workflow screenshot */}
-          <div className="rounded-lg overflow-hidden bg-muted/50 mb-5">
+          <div className="relative rounded-lg overflow-hidden bg-muted/50 mb-5">
             <Image
               src={project.heroImage}
               alt={project.title}
@@ -142,6 +142,13 @@ function HighlightedProject({
               className="w-full h-auto group-hover:scale-[1.01] transition-transform duration-500"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
+            {project.demoVideo && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/90 text-primary-foreground shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Play className="h-5 w-5 ml-0.5" fill="currentColor" />
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="flex items-center gap-2 mb-2">
