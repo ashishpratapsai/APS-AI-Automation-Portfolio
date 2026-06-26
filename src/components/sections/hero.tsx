@@ -60,26 +60,26 @@ export function Hero() {
                 />
               </div>
 
-              {/* Orbiting labels - single ring */}
+              {/* Orbiting logos - single ring */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-0"
               >
                 {[
-                  { label: "n8n", angle: 0 },
-                  { label: "OpenAI", angle: 60 },
-                  { label: "Claude", angle: 120 },
-                  { label: "Gemini", angle: 180 },
-                  { label: "Slack", angle: 240 },
-                  { label: "Airtable", angle: 300 },
+                  { icon: "n8n", color: "#EA4B71", angle: 0 },
+                  { icon: "openai", color: "#412991", angle: 60 },
+                  { icon: "anthropic", color: "#D97757", angle: 120 },
+                  { icon: "googlegemini", color: "#8E75B2", angle: 180 },
+                  { icon: "slack", color: "#4A154B", angle: 240 },
+                  { icon: "airtable", color: "#18BFFF", angle: 300 },
                 ].map((tool) => {
                   const r = 130;
                   const x = Math.cos((tool.angle * Math.PI) / 180) * r;
                   const y = Math.sin((tool.angle * Math.PI) / 180) * r;
                   return (
                     <motion.div
-                      key={tool.label}
+                      key={tool.icon}
                       className="absolute"
                       style={{
                         left: `calc(50% + ${x}px)`,
@@ -89,22 +89,27 @@ export function Hero() {
                       animate={{ rotate: -360 }}
                       transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
                     >
-                      <span className="px-2 py-0.5 text-[8px] sm:text-[9px] font-medium rounded-full bg-background/80 border border-border/50 text-foreground/60 backdrop-blur-sm whitespace-nowrap">
-                        {tool.label}
+                      <span className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-background/80 border border-border/50 backdrop-blur-sm">
+                        <span
+                          className="inline-block w-4 h-4 sm:w-4.5 sm:h-4.5"
+                          style={{
+                            backgroundColor: tool.color,
+                            maskImage: `url(https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tool.icon}.svg)`,
+                            WebkitMaskImage: `url(https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tool.icon}.svg)`,
+                            maskSize: "contain",
+                            WebkitMaskSize: "contain",
+                            maskRepeat: "no-repeat",
+                            WebkitMaskRepeat: "no-repeat",
+                            maskPosition: "center",
+                            WebkitMaskPosition: "center",
+                          }}
+                        />
                       </span>
                     </motion.div>
                   );
                 })}
               </motion.div>
 
-              {/* Status badge */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1 rounded-full bg-background border border-border">
-                <span className="relative flex h-1.5 w-1.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-500" />
-                </span>
-                <span className="text-[10px] text-muted-foreground whitespace-nowrap">Available for work</span>
-              </div>
             </div>
           </motion.div>
 
@@ -118,19 +123,17 @@ export function Hero() {
               variants={item}
               className="text-primary font-medium text-sm font-mono mb-6 tracking-wide"
             >
-              AI Automation Expert · Mumbai
+              AI Automation Expert
             </motion.p>
 
             <motion.h1
               variants={item}
-              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-[1.1] tracking-tight text-foreground"
+              className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-[1.1] tracking-tight text-foreground"
             >
-              I build AI systems
+              I Build AI Systems
               <br />
-              that save
-              <br />
-              businesses{" "}
-              <span className="text-primary">hours every week.</span>
+              That Serve{" "}
+              <span className="text-primary">Businesses.</span>
             </motion.h1>
 
             <motion.p
@@ -193,25 +196,25 @@ export function Hero() {
                 />
               </div>
 
-              {/* Orbiting text labels - inner ring (spins slowly) */}
+              {/* Orbiting logos - inner ring (spins slowly) */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-0"
               >
                 {[
-                  { label: "n8n", angle: 0 },
-                  { label: "OpenAI", angle: 72 },
-                  { label: "Claude", angle: 144 },
-                  { label: "Gemini", angle: 216 },
-                  { label: "Airtable", angle: 288 },
+                  { icon: "n8n", color: "#EA4B71", angle: 0 },
+                  { icon: "openai", color: "#412991", angle: 72 },
+                  { icon: "anthropic", color: "#D97757", angle: 144 },
+                  { icon: "googlegemini", color: "#8E75B2", angle: 216 },
+                  { icon: "airtable", color: "#18BFFF", angle: 288 },
                 ].map((tool) => {
                   const r = 175;
                   const x = Math.cos((tool.angle * Math.PI) / 180) * r;
                   const y = Math.sin((tool.angle * Math.PI) / 180) * r;
                   return (
                     <motion.div
-                      key={tool.label}
+                      key={tool.icon}
                       className="absolute"
                       style={{
                         left: `calc(50% + ${x}px)`,
@@ -221,33 +224,46 @@ export function Hero() {
                       animate={{ rotate: -360 }}
                       transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                     >
-                      <span className="px-3 py-1 text-[10px] font-medium rounded-full bg-background/80 border border-border/50 text-foreground/70 backdrop-blur-sm whitespace-nowrap">
-                        {tool.label}
+                      <span className="flex items-center justify-center w-10 h-10 rounded-full bg-background/80 border border-border/50 backdrop-blur-sm">
+                        <span
+                          className="inline-block w-5 h-5"
+                          style={{
+                            backgroundColor: tool.color,
+                            maskImage: `url(https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tool.icon}.svg)`,
+                            WebkitMaskImage: `url(https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tool.icon}.svg)`,
+                            maskSize: "contain",
+                            WebkitMaskSize: "contain",
+                            maskRepeat: "no-repeat",
+                            WebkitMaskRepeat: "no-repeat",
+                            maskPosition: "center",
+                            WebkitMaskPosition: "center",
+                          }}
+                        />
                       </span>
                     </motion.div>
                   );
                 })}
               </motion.div>
 
-              {/* Orbiting text labels - outer ring (spins opposite) */}
+              {/* Orbiting logos - outer ring (spins opposite) */}
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-0"
               >
                 {[
-                  { label: "Slack", angle: 36 },
-                  { label: "Stripe", angle: 108 },
-                  { label: "Gmail", angle: 180 },
-                  { label: "Supabase", angle: 252 },
-                  { label: "Calendly", angle: 324 },
+                  { icon: "slack", color: "#4A154B", angle: 36 },
+                  { icon: "stripe", color: "#635BFF", angle: 108 },
+                  { icon: "gmail", color: "#EA4335", angle: 180 },
+                  { icon: "supabase", color: "#3FCF8E", angle: 252 },
+                  { icon: "calendly", color: "#006BFF", angle: 324 },
                 ].map((tool) => {
                   const r = 215;
                   const x = Math.cos((tool.angle * Math.PI) / 180) * r;
                   const y = Math.sin((tool.angle * Math.PI) / 180) * r;
                   return (
                     <motion.div
-                      key={tool.label}
+                      key={tool.icon}
                       className="absolute"
                       style={{
                         left: `calc(50% + ${x}px)`,
@@ -257,22 +273,27 @@ export function Hero() {
                       animate={{ rotate: 360 }}
                       transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
                     >
-                      <span className="px-2.5 py-1 text-[9px] font-medium rounded-full bg-background/60 border border-border/40 text-foreground/50 backdrop-blur-sm whitespace-nowrap">
-                        {tool.label}
+                      <span className="flex items-center justify-center w-9 h-9 rounded-full bg-background/60 border border-border/40 backdrop-blur-sm">
+                        <span
+                          className="inline-block w-4.5 h-4.5"
+                          style={{
+                            backgroundColor: tool.color,
+                            maskImage: `url(https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tool.icon}.svg)`,
+                            WebkitMaskImage: `url(https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tool.icon}.svg)`,
+                            maskSize: "contain",
+                            WebkitMaskSize: "contain",
+                            maskRepeat: "no-repeat",
+                            WebkitMaskRepeat: "no-repeat",
+                            maskPosition: "center",
+                            WebkitMaskPosition: "center",
+                          }}
+                        />
                       </span>
                     </motion.div>
                   );
                 })}
               </motion.div>
 
-              {/* Status badge */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-                </span>
-                <span className="text-xs text-muted-foreground whitespace-nowrap">Available for work</span>
-              </div>
             </div>
           </motion.div>
         </div>

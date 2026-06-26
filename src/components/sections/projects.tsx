@@ -61,8 +61,8 @@ function FeaturedProject() {
               {project.tagline}
             </p>
 
-            <div className="grid grid-cols-2 gap-3 mb-6">
-              {project.results.slice(0, 4).map((result) => (
+            <div className="grid grid-cols-3 gap-3 mb-6">
+              {project.results.slice(0, 3).map((result) => (
                 <div
                   key={result.label}
                   className="p-3 rounded-lg bg-muted/50 border border-border"
@@ -130,8 +130,8 @@ function HighlightedProject({
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
     >
-      <Link href={`/projects/${project.slug}`} className="block group">
-        <GlowCard className="p-5 sm:p-6 rounded-2xl">
+      <Link href={`/projects/${project.slug}`} className="block group h-full">
+        <GlowCard className="p-5 sm:p-6 rounded-2xl h-full flex flex-col">
           {/* Workflow screenshot */}
           <div className="relative rounded-lg overflow-hidden bg-muted/50 mb-5">
             <Image
@@ -161,12 +161,12 @@ function HighlightedProject({
             {project.title}
           </h3>
 
-          <p className="text-xs text-muted-foreground mb-5 leading-relaxed line-clamp-2">
+          <p className="text-xs text-muted-foreground mb-5 leading-relaxed line-clamp-2 flex-1">
             {project.tagline}
           </p>
 
           {/* Key metrics row */}
-          <div className="grid grid-cols-2 gap-2 mb-4">
+          <div className="grid grid-cols-2 gap-2 mb-4 mt-auto">
             {project.results.slice(0, 2).map((result) => (
               <div
                 key={result.label}
@@ -207,8 +207,7 @@ export function Projects() {
         <SectionHeading
           number="02"
           label="WORK"
-          title="Projects"
-          subtitle="Automation workflows and products I've built."
+          title="My Projects"
           align="left"
         />
 
@@ -245,16 +244,16 @@ export function Projects() {
                 >
                   <Link
                     href={`/projects/${project.slug}`}
-                    className="block group"
+                    className="block group h-full"
                   >
-                    <GlowCard className="p-5">
+                    <GlowCard className="p-5 h-full flex flex-col">
                       <span className="text-xs text-muted-foreground">
                         {project.category}
                       </span>
                       <h4 className="font-semibold text-foreground mt-1 mb-2 group-hover:text-primary transition-colors text-sm">
                         {project.title}
                       </h4>
-                      <p className="text-xs text-muted-foreground line-clamp-2 mb-3">
+                      <p className="text-xs text-muted-foreground line-clamp-2 mb-3 flex-1">
                         {project.tagline}
                       </p>
                       {project.results[0] && (

@@ -69,13 +69,13 @@ export default async function ProjectPage({ params }: Props) {
         <ProjectHeader project={project} />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 space-y-20">
           <ProjectOverview project={project} />
-          <ProjectWorkflow project={project} />
-          <ProjectIntegrations project={project} />
-          {project.diagramImage && <ProjectDiagram project={project} />}
           {project.screenshots.length > 0 && (
             <ProjectScreenshots project={project} />
           )}
+          <ProjectWorkflow project={project} />
           <ProjectResults project={project} />
+          <ProjectIntegrations project={project} />
+          {project.diagramImage && <ProjectDiagram project={project} />}
           <ProjectNav prev={prevProject} next={nextProject} />
         </div>
       </main>

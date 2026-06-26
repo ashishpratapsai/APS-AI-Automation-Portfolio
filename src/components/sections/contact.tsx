@@ -24,13 +24,7 @@ export function Contact() {
           transition={{ duration: 0.5 }}
           className="max-w-lg space-y-6"
         >
-          <p className="text-muted-foreground leading-relaxed">
-            Have a process that needs automating? A workflow that&apos;s
-            eating your team&apos;s time? Let&apos;s talk about what I can
-            build for you.
-          </p>
-
-          <div className="space-y-4 pt-2">
+          <div className="space-y-4">
             <a
               href={`mailto:${SITE_CONFIG.email}`}
               className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
@@ -60,6 +54,28 @@ export function Contact() {
               <ArrowUpRight className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
             </a>
 
+            <a
+              href={SITE_CONFIG.socials.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
+            >
+              <GitHubIcon className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
+              <span className="text-sm">GitHub</span>
+              <ArrowUpRight className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
+
+            <a
+              href={SITE_CONFIG.socials.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
+            >
+              <YouTubeIcon className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
+              <span className="text-sm">YouTube</span>
+              <ArrowUpRight className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
+
             <div className="flex items-center gap-3 text-muted-foreground">
               <MapPin className="h-4 w-4" />
               <span className="text-sm">{SITE_CONFIG.location}</span>
@@ -74,27 +90,6 @@ export function Contact() {
               <FileText className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
               <span className="text-sm">View Resume</span>
               <ArrowUpRight className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-            </a>
-          </div>
-
-          <div className="flex items-center gap-4 pt-4">
-            <a
-              href={SITE_CONFIG.socials.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="GitHub"
-            >
-              <GitHubIcon className="h-5 w-5" />
-            </a>
-            <a
-              href={SITE_CONFIG.socials.youtube}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="YouTube"
-            >
-              <YouTubeIcon className="h-5 w-5" />
             </a>
           </div>
         </motion.div>

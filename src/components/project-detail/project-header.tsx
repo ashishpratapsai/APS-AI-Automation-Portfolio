@@ -1,42 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink, Code } from "lucide-react";
 import { Project } from "@/types/project";
-
-// Typing animation for the tagline
-function TypedText({ text, delay = 0 }: { text: string; delay?: number }) {
-  const [displayed, setDisplayed] = useState("");
-  const [started, setStarted] = useState(false);
-
-  useEffect(() => {
-    const startTimer = setTimeout(() => setStarted(true), delay);
-    return () => clearTimeout(startTimer);
-  }, [delay]);
-
-  useEffect(() => {
-    if (!started) return;
-    if (displayed.length >= text.length) return;
-
-    const timer = setTimeout(() => {
-      setDisplayed(text.slice(0, displayed.length + 1));
-    }, 15);
-
-    return () => clearTimeout(timer);
-  }, [displayed, text, started]);
-
-  return (
-    <span>
-      {displayed}
-      {displayed.length < text.length && (
-        <span className="inline-block w-[2px] h-[1em] bg-primary ml-0.5 animate-pulse align-text-bottom" />
-      )}
-    </span>
-  );
-}
 
 const container = {
   hidden: { opacity: 0 },
@@ -86,12 +54,12 @@ export function ProjectHeader({ project }: { project: Project }) {
           {project.title}
         </motion.h1>
 
-        {/* Tagline with typing animation */}
+        {/* Tagline */}
         <motion.p
           variants={item}
           className="text-muted-foreground text-base sm:text-lg max-w-2xl leading-relaxed mb-6"
         >
-          <TypedText text={project.tagline} delay={600} />
+          {project.tagline}
         </motion.p>
 
         {/* Tech badges */}

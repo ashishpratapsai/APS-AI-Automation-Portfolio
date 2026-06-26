@@ -3,13 +3,23 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-const capabilities = [
-  "End-to-end content pipelines (research, scripting, thumbnails, captions, metadata, all automated)",
-  "AI agent integration (OpenAI, Claude, Gemini APIs wired into real business workflows)",
-  "Full-stack SaaS development (built a 30+ module production platform from scratch)",
-  "Multi-tool orchestration (connecting 5-10+ tools in a single pipeline with zero manual steps)",
-  "n8n workflow design and deployment (webhooks, scheduled flows, error handling, sub-workflows)",
-  "Web scraping and prospect research automation at scale",
+const valuePoints = [
+  {
+    heading: "High Agency and Drive",
+    bullets: [
+      "I don't wait for specs. I identify the problem, scope the solution, and ship it.",
+      "Speed matters. I move fast without cutting corners on quality.",
+      "High standards are non-negotiable. Every system I build is production-grade, not a demo.",
+    ],
+  },
+  {
+    heading: "Technical Depth",
+    bullets: [
+      "End-to-end content pipelines: from idea capture to published video with zero manual steps.",
+      "Second brain architecture: a structured system in Notion that captures every idea, task, and project so nothing falls through the cracks.",
+      "AI systems with feedback loops: autonomous agents that learn from outputs, so the system keeps improving over time. Built with Claude Code, n8n, OpenAI, Gemini, Supabase, Airtable, and more.",
+    ],
+  },
 ];
 
 interface Tool {
@@ -114,42 +124,32 @@ export function About() {
           >
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                We get 80 years if we&apos;re lucky. Most people spend a huge
-                chunk of that doing{" "}
-                <span className="text-foreground font-semibold">
-                  work a computer could handle in seconds
-                </span>
-                . If something can be delegated to a system that never gets tired
-                and runs 24/7, why is a human still doing it?
+                Over the last{" "}
+                <span className="text-foreground font-semibold">eight years working with coaching institutes</span>
+                {" "}and{" "}
+                <span className="text-foreground font-semibold">three years creating content</span>,
+                I realized how most people waste enormous amounts of time on
+                scheduling, tracking, and formatting instead of actually spending
+                time on thinking and creating valuable assets. That&apos;s when I
+                decided I would automate all of it.
               </p>
               <p>
-                I learned this firsthand.{" "}
-                <span className="text-foreground font-semibold">8 years inside coaching institutes</span>
-                , watching talented people burn hours on scheduling, fee tracking,
-                and formatting instead of teaching.{" "}
-                <span className="text-foreground font-semibold">3 years creating content</span>
-                , losing 12-20 hours every week to research, scripting, and
-                thumbnails before I could even hit record.
-              </p>
-              <p>
-                So I built systems to fix both. An{" "}
-                <span className="text-foreground font-semibold">
-                  autonomous content pipeline
-                </span>{" "}
-                across two YouTube channels and LinkedIn. A{" "}
-                <span className="text-foreground font-semibold">
-                  second brain in Notion
-                </span>{" "}
-                that captures every idea, task, and project. An{" "}
-                <span className="text-foreground font-semibold">
-                  AI Operating System
-                </span>{" "}
-                where Claude has a live map of my priorities, content pipeline,
-                and decision history. A{" "}
+                So I built a{" "}
                 <span className="text-foreground font-semibold">
                   full SaaS platform
                 </span>{" "}
-                with 30+ modules for institute operations.
+                with 30+ modules that runs every aspect of institute operations. An{" "}
+                <span className="text-foreground font-semibold">
+                  AI Operating System and second brain
+                </span>{" "}
+                where Claude has a live map of my priorities, content pipeline,
+                and decision history, and Notion captures every idea, task, and
+                project. And an{" "}
+                <span className="text-foreground font-semibold">
+                  autonomous content generation pipeline
+                </span>{" "}
+                across two YouTube channels and LinkedIn that takes any idea from
+                raw input to published video with zero manual steps.
               </p>
               <p>
                 Now I do the same for others. Find the repetitive work eating
@@ -157,21 +157,32 @@ export function About() {
               </p>
             </div>
 
-            <div className="mt-8 space-y-3">
+            <div className="mt-8 space-y-6">
               <h3 className="text-sm font-medium text-foreground uppercase tracking-wider mb-4">
                 What I bring to the table
               </h3>
-              {capabilities.map((cap, i) => (
+              {valuePoints.map((point, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.05, duration: 0.3 }}
-                  className="flex items-start gap-3 text-sm text-muted-foreground"
+                  transition={{ delay: i * 0.1, duration: 0.3 }}
                 >
-                  <span className="text-primary mt-1 text-xs">&#9656;</span>
-                  <span>{cap}</span>
+                  <h4 className="text-sm font-semibold text-foreground mb-2">
+                    {point.heading}
+                  </h4>
+                  <ul className="space-y-2">
+                    {point.bullets.map((bullet, j) => (
+                      <li
+                        key={j}
+                        className="flex items-start gap-3 text-sm text-muted-foreground"
+                      >
+                        <span className="text-primary mt-1 text-xs">&#9656;</span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </motion.div>
               ))}
             </div>

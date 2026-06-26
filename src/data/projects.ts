@@ -22,7 +22,7 @@ export const projects: Project[] = [
       "/images/projects/institura-assignments.webp",
     ],
     problem:
-      "- A mid-size coaching institute spends **Rs 8-10 lakh/year** on operational staff (admin, typist, data entry)\n- Timetables take **10-15 hours per term** to create manually, and still have conflicts\n- Question papers take a typist **2-3 days** per paper, with formatting errors\n- Fee registers miss **GST calculations**, receipts are manual, payments go untracked\n- No centralized system for testing, homework, attendance, or financial reporting\n- The money is being spent, but the **operations are still broken**",
+      "- A mid-size coaching institute spends **$12,000+/year** on operational staff (admin, typist, data entry)\n- Timetables take **10-15 hours per term** to create manually, and still have conflicts\n- Question papers take a typist **2-3 days** per paper, with formatting errors\n- No centralized system for testing, homework, attendance, or financial reporting\n- The money is being spent, but the **operations are still broken**",
     solution:
       "- **AI Timetable Generation** — Claude API takes teacher availability, room constraints, and subject requirements. Produces a conflict-free timetable in **60 seconds**. No competitor in India has this\n- **AI Question Paper Creator** — Teachers upload a PDF/DOCX. Mathpix OCR extracts questions, options, answers, and math formulas. Auto-corrects formatting, applies institute logo and watermark. **Days of work reduced to minutes**\n- **Fee management with GST** — Component-wise fee structures with individual GST percentages, Razorpay billing, installment tracking, and automated receipts\n- **Online testing engine** — JEE/NEET/Board formats, global question bank, auto-graded CBT with student tracking\n- **Partner Sales CRM** — Google Maps lead discovery, Gemini-powered sales messaging in Hinglish, 9-stage pipeline\n- **30+ modules total** — Attendance, payroll, homework, syllabus tracking, expense management. One platform for the entire institute",
     workflow: [
@@ -75,15 +75,9 @@ export const projects: Project[] = [
     results: [
       {
         label: "Annual staff cost saved",
-        value: "Rs 8-10L/yr",
+        value: "$12,000+/yr",
         description:
-          "A mid-size coaching institute typically spends Rs 8-10 lakh/year on a dedicated admin (Rs 15-20K/mo), a typist for question papers (Rs 10-15K/mo), and staff time on scheduling, fee tracking, and attendance. Institura automates all three roles.",
-      },
-      {
-        label: "Timetable generation",
-        value: "60 sec",
-        description:
-          "Claude AI generates a conflict-free timetable in under a minute. Manually, this takes a senior admin 10-15 hours per term. At Rs 300/hr, that is Rs 3,000-4,500 saved per scheduling cycle.",
+          "A mid-size coaching institute typically spends $12,000+/year on a dedicated admin, a typist for question papers, and staff time on scheduling, fee tracking, and attendance. Institura automates all three roles.",
       },
       {
         label: "Question paper creation",
@@ -92,10 +86,10 @@ export const projects: Project[] = [
           "Teachers upload a PDF or DOCX, get a print-ready question paper with institute logo, watermark, and auto-corrected formatting. What used to take a typist 2-3 days now happens in minutes.",
       },
       {
-        label: "Modules shipped",
-        value: "30+",
+        label: "Timetable generation",
+        value: "60 sec",
         description:
-          "Fees with GST, online testing (JEE/NEET/Board), attendance, payroll, homework, syllabus tracking, expense management, and a partner sales CRM. One platform for the entire institute.",
+          "Claude AI generates a conflict-free timetable in under a minute. Manually, this takes a senior admin 10-15 hours per term.",
       },
     ],
     liveUrl: "https://institura.com",
@@ -259,13 +253,13 @@ export const projects: Project[] = [
     results: [
       {
         label: "Research-to-script time",
-        value: "3-5 hrs to 5 min",
+        value: "5 hrs to 5 min",
         description:
           "The entire pre-production process (finding inspiration, researching, transcribing references, writing the script, creating titles, captions, descriptions, shooting guide) compressed from hours to minutes per video.",
       },
       {
         label: "Creator bandwidth freed",
-        value: "10-20 hrs/week",
+        value: "20 hrs/week",
         description:
           "At 4 videos/week, the creator saves 10-20 hours of pre-production and editor coordination time. That time goes into actually creating content, taking more brand deals, or scaling the channel.",
       },
@@ -471,7 +465,7 @@ export const projects: Project[] = [
   // PROJECT 7: AI Proposal Generation System
   {
     slug: "ai-proposal-generator",
-    title: "AI Proposal Generator — Meeting to Proposal in 30 Seconds",
+    title: "AI Proposal Generator — Meeting to Proposal in 52 Seconds",
     tagline:
       "An AI system that listens to your sales calls, classifies internal vs. client meetings, aggregates context from multiple conversations, and generates a fully branded PandaDoc proposal with dynamic pricing. Smart enough to handle catalog gaps and manual overrides.",
     description:
@@ -534,7 +528,7 @@ export const projects: Project[] = [
     results: [
       {
         label: "Proposal delivery time",
-        value: "30 seconds",
+        value: "52 sec",
         description:
           "From end of sales call to a fully branded, priced proposal in the prospect's inbox. Previously took 1-3 days. Responding within 5 minutes makes you 21x more likely to close (Harvard Business Review).",
       },
