@@ -175,9 +175,9 @@ export const projects: Project[] = [
       },
       {
         label: "Revenue impact",
-        value: "Rs 10-50L/mo",
+        value: "$12K-60K/mo",
         description:
-          "Assuming the agency reaches out to 1,000+ influencers, closes 20-50 partnerships at Rs 50K-1L average deal size. The scraper is the top of that funnel. Bigger pipeline, faster campaigns, more revenue.",
+          "Assuming the agency reaches out to 1,000+ influencers, closes 20-50 partnerships at $600-1,200 average deal size. The scraper is the top of that funnel. Bigger pipeline, faster campaigns, more revenue.",
       },
       {
         label: "Data points per lead",
@@ -360,9 +360,9 @@ export const projects: Project[] = [
       },
       {
         label: "Revenue impact",
-        value: "Rs 10-30L/yr",
+        value: "$12K-36K/yr",
         description:
-          "Assuming 5-10% of deals are lost due to missed follow-ups or forgotten commitments. At 20 deals/month with Rs 1-2L average deal size, recovering even a fraction is Rs 10-30L annually.",
+          "Assuming 5-10% of deals are lost due to missed follow-ups or forgotten commitments. At 20 deals/month with $1,200-2,400 average deal size, recovering even a fraction is $12K-36K annually.",
       },
     ],
     techStack: [
@@ -388,7 +388,7 @@ export const projects: Project[] = [
     heroImage: "/images/projects/clickpost-outreach-hero.webp",
     screenshots: [],
     problem:
-      "- Generic cold emails get **1-2% reply rates**. Personalized ones get **3-5x higher**\n- Personalization requires manual research: visit website, find About page, read positioning, write custom opener\n- At **10-15 minutes per prospect** and 500+ prospects per campaign, that's **80-125 hours of SDR time**\n- A senior SDR at Rs 50-80K/month is spending most of their time on research instead of selling\n- At scale, this is a **Rs 5-10 lakh/year cost** just for the research portion of outbound",
+      "- Generic cold emails get **1-2% reply rates**. Personalized ones get **3-5x higher**\n- Personalization requires manual research: visit website, find About page, read positioning, write custom opener\n- At **10-15 minutes per prospect** and 500+ prospects per campaign, that's **80-125 hours of SDR time**\n- A senior SDR at $600-1,000/month is spending most of their time on research instead of selling\n- At scale, this is a **$6,000-12,000/year cost** just for the research portion of outbound",
     solution:
       "- Reads prospect domains from Google Sheets, **scrapes each company's homepage**\n- AI agent (**OpenAI GPT-4.1**) detects the About Us page from header/footer links automatically\n- Extracts **company intelligence**: mission, product focus, team, differentiators, industry\n- Second AI agent generates a **hyper-personalized icebreaker** addressing the prospect by name, referencing what their company actually does\n- **Edge cases handled**: blocked websites flagged (not silently skipped), companies without About pages get personalization from homepage content\n- **2-second rate limiting** between scrapes prevents IP blocking\n- Output written directly to Google Sheets, ready for outreach sequencing",
     workflow: [
@@ -441,9 +441,9 @@ export const projects: Project[] = [
       },
       {
         label: "SDR cost replaced",
-        value: "Rs 5-10L/yr",
+        value: "$6K-12K/yr",
         description:
-          "Assuming a senior SDR at Rs 50-80K/month spends 60-70% of their time on prospect research. This agent eliminates that research entirely, freeing the SDR to focus on calls and closing.",
+          "Assuming a senior SDR at $600-1,000/month spends 60-70% of their time on prospect research. This agent eliminates that research entirely, freeing the SDR to focus on calls and closing.",
       },
       {
         label: "Reply rate uplift",
@@ -536,13 +536,13 @@ export const projects: Project[] = [
         label: "Deals saved from going cold",
         value: "20-30%",
         description:
-          "Assuming 20 sales conversations/month and a 10-15% improvement in close rate due to instant follow-up. At average deal sizes of Rs 1-5L, that's Rs 4-30L in recovered annual revenue.",
+          "Assuming 20 sales conversations/month and a 10-15% improvement in close rate due to instant follow-up. At average deal sizes of $1,200-6,000, that's $5K-36K in recovered annual revenue.",
       },
       {
         label: "Manual effort per proposal",
         value: "2-3 hrs to 0",
         description:
-          "Previously required 2-3 hours of ops/sales time per proposal (reviewing notes, drafting, pricing, formatting in PandaDoc). At 20 proposals/month and Rs 500-1000/hr, that's Rs 20K-60K/month in labor eliminated. API costs are negligible in comparison.",
+          "Previously required 2-3 hours of ops/sales time per proposal (reviewing notes, drafting, pricing, formatting in PandaDoc). At 20 proposals/month and $6-12/hr, that's $240-720/month in labor eliminated. API costs are negligible in comparison.",
       },
       {
         label: "Tools orchestrated",
