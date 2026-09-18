@@ -13,7 +13,6 @@ export function AnimatedBackground() {
     if (!ctx) return;
 
     let animationId: number;
-    let time = 0;
 
     const particles: {
       x: number;
@@ -52,7 +51,6 @@ export function AnimatedBackground() {
       const h = canvas.height;
 
       ctx.clearRect(0, 0, w, h);
-      time += 0.003;
 
       // Update and draw particles
       for (let i = 0; i < particles.length; i++) {

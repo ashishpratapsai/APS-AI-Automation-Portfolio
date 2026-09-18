@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
+import { SITE_CONFIG } from "@/lib/constants";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,15 +15,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ashishpratapsingh.com"),
+  metadataBase: new URL(SITE_CONFIG.url),
   title: {
-    default: "Ashish Pratap Singh | AI Automation Expert & n8n Developer",
+    default: "Ashish Pratap Singh | AI Engineer & Automation Architect",
     template: "%s | Ashish Pratap Singh",
   },
   description:
-    "AI automation expert specializing in n8n workflows, AI agent integration, and business process automation. Building intelligent automation that saves businesses hours every week.",
+    "I build autonomous AI systems and LLM-powered applications that serve businesses. Shipped Institura, a live SaaS saving clients $15,000+/yr. Available for AI Engineer and automation consulting.",
   keywords: [
-    "AI automation expert",
+    "AI Engineer",
+    "automation architect",
+    "LLM engineering",
+    "Python AI agents",
     "n8n developer",
     "workflow automation",
     "AI integration",
@@ -36,25 +40,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Ashish Pratap Singh — AI Automation Expert",
-    title: "Ashish Pratap Singh | AI Automation Expert & n8n Developer",
+    siteName: "Ashish Pratap Singh | AI Engineer & Automation Architect",
+    title: "Ashish Pratap Singh | AI Engineer & Automation Architect",
     description:
-      "I build intelligent automation workflows that save businesses hours every week. Specializing in n8n, AI agents, and business process automation.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Ashish Pratap Singh — AI Automation Expert",
-      },
-    ],
+      "I build autonomous AI systems and LLM-powered applications that serve businesses. Shipped Institura, a live SaaS saving clients $15,000+/yr. Available for AI Engineer and automation consulting.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ashish Pratap Singh | AI Automation Expert",
+    title: "Ashish Pratap Singh | AI Engineer & Automation Architect",
     description:
-      "I build intelligent automation workflows that save businesses hours every week.",
-    images: ["/og-image.png"],
+      "I build autonomous AI systems and LLM-powered applications that serve businesses. Shipped Institura, a live SaaS saving clients $15,000+/yr.",
   },
   robots: {
     index: true,

@@ -57,7 +57,6 @@ export default async function ProjectPage({ params }: Props) {
     notFound();
   }
 
-  const currentIndex = projects.findIndex((p) => p.slug === slug);
   const activeProjects = projects.filter((p) => !p.title.includes("Coming Soon"));
   const prevProject = activeProjects[activeProjects.indexOf(project) - 1];
   const nextProject = activeProjects[activeProjects.indexOf(project) + 1];

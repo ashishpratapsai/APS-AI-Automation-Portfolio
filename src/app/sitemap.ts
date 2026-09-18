@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://ashishpratapsingh.com";
+  const baseUrl = SITE_CONFIG.url;
 
   const projectRoutes = projects
     .filter((p) => !p.title.includes("Coming Soon"))

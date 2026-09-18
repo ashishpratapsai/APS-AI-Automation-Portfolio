@@ -123,7 +123,7 @@ export function Hero() {
               variants={item}
               className="text-primary font-medium text-sm font-mono mb-6 tracking-wide"
             >
-              AI Automation Expert
+              AI Engineer &amp; Automation Architect
             </motion.p>
 
             <motion.h1
@@ -140,7 +140,8 @@ export function Hero() {
               variants={item}
               className="text-muted-foreground text-base sm:text-lg max-w-lg mb-10 leading-relaxed"
             >
-              I design n8n workflows, integrate AI agents, and build full-stack
+              I build autonomous AI systems that serve businesses: LLM-powered
+              agents in Python, n8n automation workflows, and full-stack
               products that eliminate manual operations and save real money.
             </motion.p>
 
@@ -154,6 +155,14 @@ export function Hero() {
               >
                 View work
               </button>
+              <a
+                href={SITE_CONFIG.socials.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary-hover transition-colors"
+              >
+                GitHub
+              </a>
               <button
                 onClick={() => scrollTo("contact")}
                 className="px-6 py-3 rounded-lg border border-border text-foreground text-sm font-medium hover:bg-muted transition-colors"

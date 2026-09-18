@@ -50,9 +50,9 @@ function OrbitingBadges() {
           <div className="text-5xl sm:text-6xl font-bold text-foreground/10 uppercase tracking-wider leading-tight">
             AI
             <br />
-            Automation
+            Engineer &amp;
             <br />
-            Expert
+            Architect
           </div>
         </div>
       </div>

@@ -20,6 +20,14 @@ const valuePoints = [
       "AI systems with feedback loops: autonomous agents that learn from outputs, so the system keeps improving over time. Built with Claude Code, n8n, OpenAI, Gemini, Supabase, Airtable, and more.",
     ],
   },
+  {
+    heading: "LLM Engineering Depth",
+    bullets: [
+      "Build autonomous AI agents in Python that reason, use tools, and deliver structured outputs, not just API wrappers.",
+      "Production patterns: real-time streaming responses, structured data extraction from unstructured text, multi-step agent orchestration.",
+      "The same LLM systems I build for my own products, I build for clients.",
+    ],
+  },
 ];
 
 interface Tool {
@@ -29,6 +37,16 @@ interface Tool {
 }
 
 const toolGroups: { label: string; tools: Tool[] }[] = [
+  {
+    label: "Python & LLM Engineering",
+    tools: [
+      { name: "Python", icon: "python", color: "#3776AB" },
+      { name: "Anthropic Claude API", icon: "claude", color: "#D97757" },
+      { name: "AI Agents", icon: null },
+      { name: "RAG Systems", icon: null },
+      { name: "LLM Orchestration", icon: null },
+    ],
+  },
   {
     label: "Automation",
     tools: [

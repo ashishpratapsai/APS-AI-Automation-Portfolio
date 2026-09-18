@@ -35,7 +35,7 @@ export function Contact() {
             </a>
 
             <a
-              href={`tel:${SITE_CONFIG.phone}`}
+              href={`tel:${SITE_CONFIG.phone.replace(/\s/g, "")}`}
               className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
             >
               <Phone className="h-4 w-4 text-muted-foreground group-hover:text-primary" />

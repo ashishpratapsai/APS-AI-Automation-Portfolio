@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
   name: "Ashish Pratap Singh",
-  title: "AI Automation Expert",
+  title: "AI Engineer & Automation Architect",
   tagline:
     "I build intelligent automation workflows that save businesses hours every week.",
   url: "https://ashishpratapsingh.vercel.app",
