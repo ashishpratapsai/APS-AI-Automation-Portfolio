@@ -46,11 +46,6 @@
         text-align: center;
         gap: 12px;
       }
-      .headshot {
-        margin-left: 0;
-        width: 100px;
-        height: 100px;
-      }
       .name { font-size: 26px; }
       .subtitle { font-size: 10px; letter-spacing: 3px; }
       .contact-bar {
@@ -62,15 +57,6 @@
         border-right: none !important;
         padding: 2px 0;
       }
-      .edu-skills-header {
-        flex-direction: column;
-        gap: 2px;
-      }
-      .edu-skills-row {
-        flex-direction: column;
-        gap: 12px;
-      }
-      .edu-col { flex: none; }
       .job-title { font-size: 11px; }
       .job-header { flex-direction: column; gap: 2px; }
       .tools-grid { flex-direction: column; gap: 4px; }
@@ -89,48 +75,41 @@
         box-shadow: none;
         overflow: visible;
       }
-      .header { margin-bottom: 3px; }
-      .name { font-size: 26px; }
-      .subtitle { font-size: 10px; margin-top: 2px; }
-      .linkedin-line { margin-top: 6px; }
-      .linkedin-line a { font-size: 9px; }
-      .contact-bar { margin-top: 5px; padding: 3px 0; font-size: 9px; }
-      .headshot { width: 72px; height: 72px; }
-      .section-title { margin-top: 6px; padding-bottom: 2px; font-size: 9.5px; letter-spacing: 2px; }
-      .summary { font-size: 8.5px; line-height: 1.4; margin-top: 3px; }
-      .edu-skills-header { margin-top: 6px; padding-bottom: 2px; }
-      .edu-skills-header .left-label,
-      .edu-skills-header .right-label { font-size: 9.5px; letter-spacing: 1px; }
-      .edu-skills-row { margin-top: 3px; gap: 12px; }
-      .edu-school { font-size: 9.5px; }
-      .edu-dates { font-size: 8px; }
-      .edu-degree, .edu-gpa { font-size: 8.5px; }
-      .skill-tag { font-size: 8px; padding: 2px 7px; }
-      .skill-tags { gap: 3px; }
-      .job { margin-bottom: 4px; }
-      .job-header { margin-top: 3px; }
-      .job-title { font-size: 10px; letter-spacing: 0.5px; }
-      .job-dates { font-size: 8.5px; }
-      .job-company { font-size: 8.5px; margin-bottom: 2px; }
-      .job-bullets li { font-size: 8.5px; line-height: 1.35; margin-bottom: 1px; padding-left: 10px; }
-      .job-bullets li::before { width: 3px; height: 3px; top: 4.5px; }
-      .tools-grid { font-size: 8.5px; margin-top: 3px; gap: 12px; }
-      .portfolio-link { margin-top: 5px; font-size: 8px; }
+      .header { margin-bottom: 6px; }
+      .name { font-size: 30px; }
+      .subtitle { font-size: 11px; margin-top: 3px; }
+      .linkedin-line { margin-top: 8px; }
+      .linkedin-line a { font-size: 10px; }
+      .contact-bar { margin-top: 7px; padding: 5px 0; font-size: 10px; }
+      .section-title { margin-top: 12px; padding-bottom: 3px; font-size: 10.5px; letter-spacing: 2px; }
+      .summary { font-size: 10px; line-height: 1.5; margin-top: 5px; }
+      .edu-school { font-size: 10px; }
+      .edu-dates { font-size: 9px; }
+      .edu-degree, .edu-gpa { font-size: 9.5px; }
+      .edu-line { margin-top: 6px; }
+      .skills-rows { margin-top: 6px; }
+      .skills-rows > div { font-size: 9.5px; line-height: 1.5; margin-bottom: 3.5px; }
+      .job { margin-bottom: 9px; }
+      .job-header { margin-top: 4px; }
+      .job-title { font-size: 11px; letter-spacing: 0.5px; }
+      .job-dates { font-size: 9.5px; }
+      .job-company { font-size: 9.5px; margin-bottom: 3px; }
+      .job-bullets li { font-size: 9.5px; line-height: 1.4; margin-bottom: 3px; padding-left: 11px; }
+      .job-bullets li::before { width: 3.5px; height: 3.5px; top: 5px; }
+      .tools-grid { font-size: 9.5px; margin-top: 5px; gap: 14px; }
+      .portfolio-link { margin-top: 10px; font-size: 9px; }
     }
 
-    /* ===== COLORS (matching portfolio orange) ===== */
+    /* ===== COLORS (navy for engineering credibility) ===== */
     :root {
-      --accent: #e05a3a;
-      --accent-light: #f0896e;
-      --accent-pale: #f5ddd5;
+      --accent: #1a3557;
+      --accent-light: #4a6a94;
+      --accent-pale: #dce4ee;
       --heading: #0f1419;
-      --text: #333;
-      --muted: #666;
-      --light: #999;
+      --text: #1a1a1a;
+      --muted: #555;
+      --light: #888;
       --border: #e0e0e0;
-      --tag-bg: #fef5f2;
-      --tag-border: #f0c4b8;
-      --tag-text: #b5422a;
     }
 
     /* ===== HEADER ===== */
@@ -196,25 +175,14 @@
       text-decoration: underline;
     }
 
-    .headshot {
-      width: 90px;
-      height: 90px;
-      border-radius: 8px;
-      object-fit: cover;
-      object-position: top;
-      border: 3px solid var(--accent-light);
-      margin-left: 20px;
-      flex-shrink: 0;
-    }
-
     /* ===== SECTION TITLES ===== */
     .section-title {
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--accent);
-      margin-top: 10px;
+      margin-top: 18px;
       margin-bottom: 2px;
       padding-bottom: 3px;
       border-bottom: 2.5px solid;
@@ -223,7 +191,7 @@
 
     /* ===== SUMMARY ===== */
     .summary {
-      font-size: 9.5px;
+      font-size: 10.5px;
       color: var(--text);
       line-height: 1.5;
       margin-top: 4px;
@@ -235,42 +203,27 @@
       font-weight: 700;
     }
 
-    /* ===== EDUCATION + SKILLS ROW ===== */
-    .edu-skills-header {
-      display: flex;
-      align-items: baseline;
-      margin-top: 10px;
-      padding-bottom: 4px;
-      border-bottom: 2.5px solid;
-      border-image: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent-pale)) 1;
+    /* ===== EDUCATION & SKILLS ===== */
+    .edu-line {
+      margin-top: 5px;
+      font-size: 9.5px;
     }
 
-    .edu-skills-header .left-label {
-      flex: 0 0 200px;
-      font-size: 11px;
+    .edu-line > span { margin-right: 8px; }
+
+    .skills-rows { margin-top: 5px; }
+
+    .skills-rows > div {
+      font-size: 10px;
+      color: var(--text);
+      line-height: 1.5;
+      margin-bottom: 5.5px;
+    }
+
+    .skill-cat {
       font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
       color: var(--accent);
     }
-
-    .edu-skills-header .right-label {
-      flex: 1;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    .edu-skills-row {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      margin-top: 6px;
-    }
-
-    .edu-col { flex: 0 0 200px; }
 
     .edu-school {
       font-size: 11px;
@@ -298,27 +251,8 @@
       font-weight: 700;
     }
 
-    .skills-col { flex: 1; }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-
-    .skill-tag {
-      display: inline-block;
-      padding: 3px 10px;
-      font-size: 9px;
-      font-weight: 500;
-      border: 1.5px solid var(--tag-border);
-      border-radius: 3px;
-      color: var(--tag-text);
-      background: var(--tag-bg);
-    }
-
     /* ===== WORK EXPERIENCE ===== */
-    .job { margin-bottom: 6px; }
+    .job { margin-bottom: 14px; }
     .job:last-child { margin-bottom: 0; }
 
     .job-header {
@@ -343,7 +277,7 @@
     }
 
     .job-company {
-      font-size: 9.5px;
+      font-size: 10px;
       color: var(--muted);
       margin-bottom: 3px;
     }
@@ -360,20 +294,20 @@
 
     .job-bullets li {
       position: relative;
-      padding-left: 12px;
-      margin-bottom: 2px;
-      font-size: 9px;
+      padding-left: 13px;
+      margin-bottom: 5px;
+      font-size: 10px;
       color: var(--text);
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
     .job-bullets li::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 5px;
-      width: 4px;
-      height: 4px;
+      top: 6px;
+      width: 4.5px;
+      height: 4.5px;
       border-radius: 50%;
       background: var(--accent);
     }
@@ -399,8 +333,8 @@
     /* ===== TOOLS ===== */
     .tools-grid {
       display: flex;
-      gap: 16px;
-      font-size: 9.5px;
+      gap: 18px;
+      font-size: 10px;
       color: var(--text);
       flex-wrap: wrap;
       margin-top: 6px;
@@ -413,7 +347,7 @@
 
     /* ===== PORTFOLIO LINK ===== */
     .portfolio-link {
-      margin-top: 8px;
+      margin-top: 14px;
       text-align: center;
       font-size: 9px;
       color: var(--light);
@@ -436,6 +370,8 @@
         <div class="subtitle">AI Engineer &amp; Automation Architect</div>
         <div class="linkedin-line">
           <a href="https://linkedin.com/in/aiaps">linkedin.com/in/aiaps</a>
+          &nbsp;|&nbsp;
+          <a href="https://github.com/ashishpratapsai">github.com/ashishpratapsai</a>
         </div>
         <div class="contact-bar">
           <div class="contact-item">+91 7983885860</div>
@@ -443,55 +379,24 @@
           <div class="contact-item">Mumbai, India</div>
         </div>
       </div>
-      <img src="images/ashish-headshot.webp" alt="Ashish Pratap Singh" class="headshot" />
     </div>
 
     <!-- PROFESSIONAL SUMMARY -->
     <div class="section-title">Professional Summary</div>
     <div class="summary">
-      AI Engineer and Automation Architect with <strong>8+ years of domain experience</strong> in education operations and <strong>3 years in content creation</strong>. I build AI-powered systems using <strong>Claude Code, n8n, and MCP servers</strong>. Built <strong>Institura</strong>, a production SaaS with 30+ modules for coaching institutes. Designed automation workflows that <strong>saved clients $12,000+/year</strong> in operational costs and <strong>reduced proposal delivery from days to 52 seconds</strong>. Built a personal AI Operating System connecting Notion and Claude for autonomous content production across YouTube and LinkedIn.
-    </div>
-
-    <!-- EDUCATION + SKILLS (side by side headings) -->
-    <div class="edu-skills-header">
-      <div class="left-label">Education</div>
-      <div class="right-label">Skills</div>
-    </div>
-    <div class="edu-skills-row">
-      <div class="edu-col">
-        <div>
-          <span class="edu-school">VIT VELLORE</span>
-          <span class="edu-dates">( 2015 - 2019 )</span>
-        </div>
-        <div class="edu-degree">B.Tech in Mechanical Engineering</div>
-        <div class="edu-gpa">CGPA - 8.09</div>
-      </div>
-      <div class="skills-col">
-        <div class="skill-tags">
-          <span class="skill-tag">Claude Code</span>
-          <span class="skill-tag">n8n Workflows</span>
-          <span class="skill-tag">Make.com</span>
-          <span class="skill-tag">AI Agents</span>
-          <span class="skill-tag">MCP Servers</span>
-          <span class="skill-tag">Claude / OpenAI / Gemini</span>
-          <span class="skill-tag">Airtable</span>
-          <span class="skill-tag">Notion Systems</span>
-          <span class="skill-tag">Content Automation</span>
-          <span class="skill-tag">Process Design</span>
-        </div>
-      </div>
+      AI Engineer and Automation Architect with <strong>8+ years of domain experience</strong> in education operations and <strong>3 years in content creation</strong>. Build production LLM applications in Python using the <strong>Anthropic Claude API</strong>: autonomous agents, tool use, streaming, and structured data extraction. Built <strong>Institura</strong>, a live SaaS with 30+ modules <strong>saving clients $12,000+/yr</strong>. Design autonomous AI workflows using <strong>n8n and MCP servers</strong> that eliminate manual operations and save businesses real money.
     </div>
 
     <!-- WORK EXPERIENCE -->
     <div class="section-title">Work Experience</div>
 
-    <!-- AI Automation Engineer at Aifyy -->
+    <!-- AI Engineer at Aifyy -->
     <div class="job">
       <div class="job-header">
-        <div class="job-title">AI AUTOMATION ENGINEER</div>
+        <div class="job-title">AI ENGINEER | LLM SYSTEMS &amp; AUTOMATION</div>
         <div class="job-dates">( May 2025 - May 2026 )</div>
       </div>
-      <div class="job-company">Aifyy — n8n + AI Workflow Systems</div>
+      <div class="job-company">Aifyy | n8n + AI Workflow Systems</div>
       <ul class="job-bullets">
         <li><strong>AI Proposal Generator:</strong> Collects context from multiple sales calls, generates branded PandaDoc proposals with dynamic pricing in <span class="metric">52 seconds</span> (vs 2-3 days). 8 tools orchestrated: Fathom, Claude, PandaDoc, Stripe, Gmail, Google Drive</li>
         <li><strong>Meeting Intelligence:</strong> Auto-captures call transcripts, classifies client vs internal, extracts action items, tracks call sequencing in CRM. <span class="metric">Zero follow-ups missed</span></li>
@@ -506,7 +411,7 @@
         <div class="job-title">FOUNDER</div>
         <div class="job-dates">( Dec 2025 - Present )</div>
       </div>
-      <div class="job-company"><a href="https://institura.com">Institura.com</a>, Mumbai — AI Operating System for Coaching Institutes <a href="https://institura.com" class="link-tag">Link</a></div>
+      <div class="job-company"><a href="https://institura.com">Institura.com</a>, Mumbai | AI Operating System for Coaching Institutes <a href="https://institura.com" class="link-tag">Link</a></div>
       <ul class="job-bullets">
         <li><strong>Built a production SaaS</strong> with 30+ modules (timetable, fees, testing, attendance, payroll, homework, partner CRM) using Claude Code. Serving live coaching institutes</li>
         <li><strong>AI Timetable Generation:</strong> Claude API produces conflict-free timetables in <span class="metric">60 seconds</span> (vs 10-15 hours manually). No competitor in India offers this</li>
@@ -541,16 +446,31 @@
       </ul>
     </div>
 
-    <!-- TOOLS -->
-    <div class="section-title">Tools</div>
-    <div class="tools-grid">
-      <div><span class="tool-cat">AI & Automation:</span> Claude Code, n8n, Make.com, MCP Servers</div>
-      <div><span class="tool-cat">LLMs:</span> Claude, OpenAI, Gemini</div>
-      <div><span class="tool-cat">Data:</span> Airtable, Notion, Supabase, Google Sheets</div>
+    <!-- EDUCATION & SKILLS -->
+    <div class="section-title">Education &amp; Skills</div>
+    <div class="edu-line">
+      <span class="edu-school">VIT VELLORE</span>
+      <span class="edu-dates">( 2015 - 2019 )</span>
+      <span class="edu-degree">B.Tech in Mechanical Engineering</span>
+      <span class="edu-gpa">CGPA - 8.09</span>
     </div>
-    <div class="tools-grid" style="margin-top: 3px;">
-      <div><span class="tool-cat">Integrations:</span> PandaDoc, Stripe, Razorpay, Slack, Gmail, Google Drive, Fathom, Apify, Calendly</div>
+    <div class="skills-rows">
+      <div><span class="skill-cat">Languages:</span> Python</div>
+      <div><span class="skill-cat">AI &amp; LLM:</span> Anthropic Claude API, AI Agents, Tool Use, RAG Systems, LLM Orchestration, Streaming, Structured Outputs, Prompt Caching</div>
+      <div><span class="skill-cat">Automation:</span> n8n, Make.com, MCP Servers, Webhooks</div>
+      <div><span class="skill-cat">LLMs:</span> Claude, OpenAI, Gemini</div>
+      <div><span class="skill-cat">Data:</span> Airtable, Supabase, Notion, Google Sheets</div>
+      <div><span class="skill-cat">Integrations:</span> PandaDoc, Stripe, Razorpay, Slack, Gmail, Google Drive, Fathom, Apify, Calendly</div>
+      <div><span class="skill-cat">Tools:</span> Claude Code, Git, GitHub</div>
     </div>
+
+    <!-- CONTINUOUS LEARNING -->
+    <div class="section-title">Continuous Learning</div>
+    <ul class="job-bullets" style="margin-top: 4px;">
+      <li>Completing <strong>28-week AI Engineering program</strong>: Python, LLM Applications, Agent Systems, RAG Pipelines, LangGraph, FastAPI, and Production Deployment</li>
+      <li>Active <strong>DSA practice on NeetCode</strong>: arrays, hashmaps, two pointers</li>
+      <li><strong>YouTube channel</strong>: teaching Claude Code and AI automation in Hinglish, <span class="metric">18+ videos published</span></li>
+    </ul>
 
     <!-- PORTFOLIO -->
     <div class="portfolio-link">
