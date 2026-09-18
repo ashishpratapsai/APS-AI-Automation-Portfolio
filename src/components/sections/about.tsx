@@ -143,7 +143,7 @@ export function About() {
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 Over the last{" "}
-                <span className="text-foreground font-semibold">eight years working with coaching institutes</span>
+                <span className="text-foreground font-semibold">seven years working with coaching institutes</span>
                 {" "}and{" "}
                 <span className="text-foreground font-semibold">three years creating content</span>,
                 I realized how most people waste enormous amounts of time on
