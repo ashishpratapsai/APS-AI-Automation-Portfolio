@@ -523,7 +523,6 @@ export const projects: Project[] = [
       "Calendly",
       "Gmail",
       "Google Drive",
-      "Instantly",
     ],
     results: [
       {
@@ -548,7 +547,7 @@ export const projects: Project[] = [
         label: "Tools orchestrated",
         value: "8",
         description:
-          "Fathom, Airtable, PandaDoc, Stripe, Gmail, Google Drive, Calendly, Instantly. One workflow. Zero manual steps.",
+          "Fathom, Claude, Airtable, PandaDoc, Stripe, Gmail, Google Drive, Calendly. One workflow. Zero manual steps.",
       },
     ],
     techStack: [
