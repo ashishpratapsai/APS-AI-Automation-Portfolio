@@ -123,7 +123,7 @@ export function Hero() {
               variants={item}
               className="text-primary font-medium text-sm font-mono mb-6 tracking-wide"
             >
-              AI Engineer &amp; Automation Architect
+              AI Automation Engineer &amp; LLM Systems
             </motion.p>
 
             <motion.h1

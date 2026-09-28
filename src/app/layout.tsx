@@ -17,14 +17,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
   title: {
-    default: "Ashish Pratap Singh | AI Engineer & Automation Architect",
+    default: "Ashish Pratap Singh | AI Automation Engineer & LLM Systems",
     template: "%s | Ashish Pratap Singh",
   },
   description:
-    "I build autonomous AI systems and LLM-powered applications that serve businesses. Shipped Institura, a live SaaS saving clients $15,000+/yr. Available for AI Engineer and automation consulting.",
+    "I build autonomous AI systems and LLM-powered applications that serve businesses. Built Institura solo, a live SaaS for 2 coaching institutes with 600+ students, replacing ₹10L+/yr in staff cost per institute. Available for AI automation engineering roles and consulting.",
   keywords: [
     "AI Engineer",
-    "automation architect",
+    "AI automation engineer",
     "LLM engineering",
     "Python AI agents",
     "n8n developer",
@@ -40,16 +40,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Ashish Pratap Singh | AI Engineer & Automation Architect",
-    title: "Ashish Pratap Singh | AI Engineer & Automation Architect",
+    siteName: "Ashish Pratap Singh | AI Automation Engineer & LLM Systems",
+    title: "Ashish Pratap Singh | AI Automation Engineer & LLM Systems",
     description:
-      "I build autonomous AI systems and LLM-powered applications that serve businesses. Shipped Institura, a live SaaS saving clients $15,000+/yr. Available for AI Engineer and automation consulting.",
+      "I build autonomous AI systems and LLM-powered applications that serve businesses. Built Institura solo, a live SaaS for 2 coaching institutes with 600+ students, replacing ₹10L+/yr in staff cost per institute. Available for AI automation engineering roles and consulting.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ashish Pratap Singh | AI Engineer & Automation Architect",
+    title: "Ashish Pratap Singh | AI Automation Engineer & LLM Systems",
     description:
-      "I build autonomous AI systems and LLM-powered applications that serve businesses. Shipped Institura, a live SaaS saving clients $15,000+/yr.",
+      "I build autonomous AI systems and LLM-powered applications that serve businesses. Built Institura solo, a live SaaS for 2 coaching institutes with 600+ students, replacing ₹10L+/yr in staff cost per institute.",
   },
   robots: {
     index: true,

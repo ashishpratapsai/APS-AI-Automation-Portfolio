@@ -123,7 +123,7 @@ export const projects: Project[] = [
     tagline:
       "Automated influencer discovery that scrapes thousands of Instagram profiles in minutes, turning weeks of manual research into a single workflow trigger.",
     description:
-      "Built for a marketing agency running influencer outreach at scale. The workflow automates the entire top-of-funnel: keyword + location input, paginated Google search via SerpAPI, intelligent Instagram profile extraction with follower count parsing, deduplication, and structured output to Google Sheets. What used to take a team member a full week now runs in the background while the team focuses on closing deals.",
+      "Built as AI Engineer at Aifyy, to run influencer outreach at scale. The workflow automates the entire top-of-funnel: keyword + location input, paginated Google search via SerpAPI, intelligent Instagram profile extraction with follower count parsing, deduplication, and structured output to Google Sheets. What used to take a team member a full week now runs in the background while the team focuses on closing deals.",
     featured: false,
     category: "Lead Generation",
     heroImage: "/images/projects/instagram-scraper-hero.webp",
@@ -177,7 +177,7 @@ export const projects: Project[] = [
         label: "Revenue impact",
         value: "$12K-60K/mo",
         description:
-          "Assuming the agency reaches out to 1,000+ influencers, closes 20-50 partnerships at $600-1,200 average deal size. The scraper is the top of that funnel. Bigger pipeline, faster campaigns, more revenue.",
+          "Assuming the team reaches out to 1,000+ influencers, closes 20-50 partnerships at $600-1,200 average deal size. The scraper is the top of that funnel. Bigger pipeline, faster campaigns, more revenue.",
       },
       {
         label: "Data points per lead",
@@ -295,7 +295,7 @@ export const projects: Project[] = [
     tagline:
       "Every meeting automatically captured, analyzed, and turned into structured CRM data with key pointers, action items, and call history. You never have to re-watch a call again.",
     description:
-      "Built for a team taking 15-20+ calls per week across sales, client delivery, and internal syncs. The 33-node n8n workflow captures every meeting transcript the moment the call ends, uses AI to extract every important detail (who said what, what was decided, what needs follow-up), classifies the call type, matches it to the right CRM contact, and creates a structured record. The result: a complete, searchable history of every conversation your team has ever had, built automatically.",
+      "Built as AI Engineer at Aifyy, for a team taking 15-20+ calls per week across sales, client delivery, and internal syncs. The 33-node n8n workflow captures every meeting transcript the moment the call ends, uses AI to extract every important detail (who said what, what was decided, what needs follow-up), classifies the call type, matches it to the right CRM contact, and creates a structured record. The result: a complete, searchable history of every conversation your team has ever had, built automatically.",
     featured: false,
     category: "Sales Automation",
     heroImage: "/images/projects/meeting-intelligence-hero.webp",
@@ -382,7 +382,7 @@ export const projects: Project[] = [
     tagline:
       "An AI research agent that scrapes prospect websites, extracts company intelligence, and writes hyper-personalized cold email icebreakers, processing hundreds of prospects in minutes instead of weeks.",
     description:
-      "Built for a B2B sales team running outbound at scale. The workflow replaces the most expensive part of cold outreach: the manual research. It takes a list of prospect domains, visits each website, intelligently finds and reads the About Us page using AI, extracts what the company does, who they serve, and what makes them different, then generates a personalized email opener that references specific details about that prospect. The entire research-to-personalization pipeline runs unattended.",
+      "Built as AI Engineer at Aifyy, for outbound sales at scale. The workflow replaces the most expensive part of cold outreach: the manual research. It takes a list of prospect domains, visits each website, intelligently finds and reads the About Us page using AI, extracts what the company does, who they serve, and what makes them different, then generates a personalized email opener that references specific details about that prospect. The entire research-to-personalization pipeline runs unattended.",
     featured: false,
     category: "Sales Automation",
     heroImage: "/images/projects/clickpost-outreach-hero.webp",
@@ -469,7 +469,7 @@ export const projects: Project[] = [
     tagline:
       "An AI system that listens to your sales calls, classifies internal vs. client meetings, aggregates context from multiple conversations, and generates a fully branded PandaDoc proposal with dynamic pricing. Smart enough to handle catalog gaps and manual overrides.",
     description:
-      "Built for a growing agency that was losing deals because proposals took 2-3 days to send after a sales call. This is not a simple transcript-to-document converter. The system intelligently classifies every meeting as internal or client-facing, saves internal meeting notes separately, and for client meetings, aggregates context across multiple calls with the same client. When you trigger a proposal, the AI smartly selects which conversation points are still relevant, matches them against a service catalog (creating custom pricing for items not in the catalog), and generates a fully branded PandaDoc proposal. Manual CRM overrides let you add context the AI didn't capture. After signing: Stripe payment, Google Drive folder, onboarding email, all automatic.",
+      "Built as AI Engineer at Aifyy, where deals were being lost because proposals took 2-3 days to send after a sales call. This is not a simple transcript-to-document converter. The system intelligently classifies every meeting as internal or client-facing, saves internal meeting notes separately, and for client meetings, aggregates context across multiple calls with the same client. When you trigger a proposal, the AI smartly selects which conversation points are still relevant, matches them against a service catalog (creating custom pricing for items not in the catalog), and generates a fully branded PandaDoc proposal. Manual CRM overrides let you add context the AI didn't capture. After signing: Stripe payment, Google Drive folder, onboarding email, all automatic.",
     featured: false,
     category: "Sales Automation",
     heroImage: "/images/projects/uplift-sales-os-hero.webp",
