@@ -10,7 +10,7 @@ export const projects: Project[] = [
     tagline:
       "A production SaaS with 30+ modules, AI timetable generation, AI question paper creation with OCR, and a full partner sales CRM. Live at institura.com.",
     description:
-      "Full-stack multi-tenant SaaS platform running on Next.js 16, PostgreSQL (Supabase with 64-table RLS), and dual AI engines (Claude + Gemini). Each institute gets a portal at [slug].institura.com. 29 development phases shipped. Real coaching centers use it daily.",
+      "Full-stack multi-tenant SaaS platform running on Next.js 16, PostgreSQL (Supabase with 64-table RLS), and dual AI engines (Claude + Gemini). Each institute gets a portal at [slug].institura.com. 29 development phases shipped. Built solo and live at 2 coaching institutes with 600+ students. I onboard and train every institute myself, then ship improvements from their feedback.",
     featured: true,
     category: "SaaS Product",
     heroImage: "/images/projects/institura-hero.webp",
@@ -22,9 +22,9 @@ export const projects: Project[] = [
       "/images/projects/institura-assignments.webp",
     ],
     problem:
-      "- A mid-size coaching institute spends **$12,000+/year** on operational staff (admin, typist, data entry)\n- Timetables take **10-15 hours per term** to create manually, and still have conflicts\n- Question papers take a typist **2-3 days** per paper, with formatting errors\n- No centralized system for testing, homework, attendance, or financial reporting\n- The money is being spent, but the **operations are still broken**",
+      "- A mid-size coaching institute spends **₹10L+/year** on operational staff (admin, typist, data entry)\n- Timetables take **10-15 hours per term** to create manually, and still have conflicts\n- Question papers take a typist **2-3 days** per paper, with formatting errors\n- No centralized system for testing, homework, attendance, or financial reporting\n- The money is being spent, but the **operations are still broken**",
     solution:
-      "- **AI Timetable Generation** — Claude API takes teacher availability, room constraints, and subject requirements. Produces a conflict-free timetable in **60 seconds**. No competitor in India has this\n- **AI Question Paper Creator** — Teachers upload a PDF/DOCX. Mathpix OCR extracts questions, options, answers, and math formulas. Auto-corrects formatting, applies institute logo and watermark. **Days of work reduced to minutes**\n- **Fee management with GST** — Component-wise fee structures with individual GST percentages, Razorpay billing, installment tracking, and automated receipts\n- **Online testing engine** — JEE/NEET/Board formats, global question bank, auto-graded CBT with student tracking\n- **Partner Sales CRM** — Google Maps lead discovery, Gemini-powered sales messaging in Hinglish, 9-stage pipeline\n- **30+ modules total** — Attendance, payroll, homework, syllabus tracking, expense management. One platform for the entire institute",
+      "- **AI Timetable Generation** — Claude API takes teacher availability, room constraints, and subject requirements. Produces a conflict-free timetable in **60 seconds**\n- **AI Question Paper Creator** — Teachers upload a PDF/DOCX. Mathpix OCR extracts questions, options, answers, and math formulas. Auto-corrects formatting, applies institute logo and watermark. **Days of work reduced to minutes**\n- **Fee management with GST** — Component-wise fee structures with individual GST percentages, Razorpay billing, installment tracking, and automated receipts\n- **Online testing engine** — JEE/NEET/Board formats, global question bank, auto-graded CBT with student tracking\n- **Partner Sales CRM** — Google Maps lead discovery, Gemini-powered sales messaging in Hinglish, 9-stage pipeline\n- **30+ modules total** — Attendance, payroll, homework, syllabus tracking, expense management. One platform for the entire institute",
     workflow: [
       {
         title: "Multi-tenant onboarding",
@@ -74,10 +74,10 @@ export const projects: Project[] = [
     ],
     results: [
       {
-        label: "Annual staff cost saved",
-        value: "$12,000+/yr",
+        label: "Staff cost replaced per institute",
+        value: "₹10L+/yr",
         description:
-          "A mid-size coaching institute typically spends $12,000+/year on a dedicated admin, a typist for question papers, and staff time on scheduling, fee tracking, and attendance. Institura automates all three roles.",
+          "A mid-size coaching institute typically spends ₹10L+/year on a dedicated admin, a typist for question papers, and staff time on scheduling, fee tracking, and attendance. Institura automates all three roles.",
       },
       {
         label: "Question paper creation",
