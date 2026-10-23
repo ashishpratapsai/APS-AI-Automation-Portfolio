@@ -564,6 +564,61 @@ export const projects: Project[] = [
     ],
   },
 
+  // PROJECT 8: RAG Knowledge Base for Institura
+  {
+    slug: "institura-rag-knowledge-base",
+    title: "AI RAG Pipeline: Institura Knowledge Base",
+    tagline:
+      "A retrieval layer prototyped for Institura: semantic search over student records, batch performance and fee status, cross-encoder reranking with Voyage AI, and Claude answers grounded only in retrieved context.",
+    description:
+      "Prototyped as the knowledge layer for Institura, so an institute admin can ask a plain-English question (who needs academic help, how a batch is performing, whose fees are pending) and get a direct answer instead of opening three reports. The Python pipeline embeds records with Voyage AI, stores them in ChromaDB with structured metadata, re-scores candidates with a cross-encoder reranker, and has Claude Haiku answer from the top results only. When the answer isn't in the retrieved context, it says so instead of guessing. Built and tested on a seeded dataset modeled on Institura's student, batch and fee records.",
+    featured: false,
+    category: "RAG System",
+    screenshots: [],
+    problem:
+      "- Admins answer the same questions every week (**who is at risk, which batch is slipping, whose fees are pending**) by digging through separate reports\n- Plain vector search ranks by embedding distance, so the **closest match isn't always the most relevant one**\n- An LLM without grounding will **confidently invent answers**, like a fee structure that isn't in the data\n- For an institute, a wrong answer about a student's marks or fees is **worse than no answer**",
+    solution:
+      "- Records embedded with **Voyage AI voyage-3** and stored in **ChromaDB** (cosine space) with metadata: student, batch, document type, marks\n- Question embedded with the same model, **top 5 candidates** retrieved by similarity\n- **Voyage rerank-2 cross-encoder** re-scores each candidate against the question and keeps the **2 most relevant**\n- **Claude Haiku** (Anthropic SDK) answers using only the reranked chunks, with numbered context passed in the prompt\n- **Hallucination guardrail**: the system prompt restricts Claude to the provided context and forces an explicit \"I don't have that information\" when the answer isn't there",
+    workflow: [
+      {
+        title: "Knowledge base setup",
+        description:
+          "Student records, batch statistics and fee reports are embedded with Voyage AI voyage-3 and written to a persistent ChromaDB collection using cosine similarity. Each document is stored with metadata (student, batch, doc type, marks).",
+      },
+      {
+        title: "Semantic retrieval",
+        description:
+          "The question is embedded with the same model and the collection returns the 5 nearest documents with their distances. This casts a wide net so the right answer is in the candidate set.",
+      },
+      {
+        title: "Cross-encoder reranking",
+        description:
+          "Voyage rerank-2 scores each candidate against the question directly, rather than comparing two separate embeddings. Candidates are reordered by relevance score and cut to the top 2, so Claude only sees what actually answers the question.",
+      },
+      {
+        title: "Grounded generation",
+        description:
+          "The reranked chunks are formatted as numbered context and sent to Claude Haiku through the Anthropic SDK. The system prompt limits the answer to that context only.",
+      },
+      {
+        title: "Refusal on missing context",
+        description:
+          "Questions the knowledge base can't answer (for example, the fee structure for new admissions) get an explicit \"I don't have that information\" instead of a plausible-sounding guess.",
+      },
+    ],
+    integrations: [
+      "Python",
+      "ChromaDB",
+      "Voyage AI (voyage-3 embeddings)",
+      "Voyage AI (rerank-2)",
+      "Anthropic SDK",
+      "Claude Haiku",
+    ],
+    results: [],
+    githubUrl: "https://github.com/ashishpratapsai/python-for-ai/tree/main/phase4",
+    techStack: ["Python", "ChromaDB", "Voyage AI", "Anthropic Claude"],
+  },
+
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {

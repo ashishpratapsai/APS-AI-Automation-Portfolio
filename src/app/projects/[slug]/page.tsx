@@ -39,7 +39,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: project.tagline,
       images: [
         {
-          url: project.heroImage,
+          // Projects without a screenshot fall back to the site OG image
+          url: project.heroImage ?? "/opengraph-image",
           width: 1200,
           height: 630,
           alt: project.title,

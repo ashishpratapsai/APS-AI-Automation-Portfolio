@@ -42,8 +42,9 @@ const toolGroups: { label: string; tools: Tool[] }[] = [
     tools: [
       { name: "Python", icon: "python", color: "#3776AB" },
       { name: "Anthropic Claude API", icon: "claude", color: "#D97757" },
+      { name: "Anthropic SDK", icon: "anthropic", color: "#191919" },
       { name: "AI Agents", icon: null },
-      { name: "RAG Systems", icon: null },
+      { name: "RAG Pipelines", icon: null },
       { name: "LLM Orchestration", icon: null },
     ],
   },
@@ -51,6 +52,7 @@ const toolGroups: { label: string; tools: Tool[] }[] = [
     label: "Automation",
     tools: [
       { name: "n8n", icon: "n8n", color: "#EA4B71" },
+      { name: "MCP Servers", icon: null },
       { name: "Webhooks", icon: null },
     ],
   },
@@ -58,8 +60,9 @@ const toolGroups: { label: string; tools: Tool[] }[] = [
     label: "AI",
     tools: [
       { name: "OpenAI", icon: "openai", color: "#412991" },
-      { name: "Claude", icon: "claude", color: "#D97757" },
+      { name: "Claude Haiku / Sonnet", icon: "claude", color: "#D97757" },
       { name: "Gemini", icon: "googlegemini", color: "#8E75B2" },
+      { name: "Voyage AI", icon: null },
     ],
   },
   {
@@ -68,6 +71,7 @@ const toolGroups: { label: string; tools: Tool[] }[] = [
       { name: "Airtable", icon: "airtable", color: "#18BFFF" },
       { name: "Google Sheets", icon: "googlesheets", color: "#34A853" },
       { name: "Supabase", icon: "supabase", color: "#3FCF8E" },
+      { name: "ChromaDB", icon: null },
       { name: "Notion", icon: "notion", color: "#000000" },
     ],
   },

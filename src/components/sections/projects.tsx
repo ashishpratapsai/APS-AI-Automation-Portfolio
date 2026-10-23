@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, Play } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { GlowCard } from "@/components/ui/glow-card";
+import { GitHubIcon } from "@/components/ui/social-icons";
 import { projects, getFeaturedProject } from "@/data/projects";
 
 // Top 2 highlighted slugs (after Institura)
@@ -13,7 +14,7 @@ const HIGHLIGHTED_SLUGS = ["ai-proposal-generator", "ai-content-creation-system"
 
 function FeaturedProject() {
   const project = getFeaturedProject();
-  if (!project) return null;
+  if (!project?.heroImage) return null;
 
   return (
     <motion.div
@@ -133,23 +134,25 @@ function HighlightedProject({
       <Link href={`/projects/${project.slug}`} className="block group h-full">
         <GlowCard className="p-5 sm:p-6 rounded-2xl h-full flex flex-col">
           {/* Workflow screenshot */}
-          <div className="relative rounded-lg overflow-hidden bg-muted/50 mb-5">
-            <Image
-              src={project.heroImage}
-              alt={project.title}
-              width={800}
-              height={400}
-              className="w-full h-auto group-hover:scale-[1.01] transition-transform duration-500"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            {project.demoVideo && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/90 text-primary-foreground shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <Play className="h-5 w-5 ml-0.5" fill="currentColor" />
+          {project.heroImage && (
+            <div className="relative rounded-lg overflow-hidden bg-muted/50 mb-5">
+              <Image
+                src={project.heroImage}
+                alt={project.title}
+                width={800}
+                height={400}
+                className="w-full h-auto group-hover:scale-[1.01] transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              {project.demoVideo && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/90 text-primary-foreground shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Play className="h-5 w-5 ml-0.5" fill="currentColor" />
+                  </div>
                 </div>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          )}
 
           <div className="flex items-center gap-2 mb-2">
             <span className="text-xs text-primary font-mono uppercase tracking-wider">
@@ -241,6 +244,7 @@ export function Projects() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: i * 0.05 }}
+                  className="relative"
                 >
                   <Link
                     href={`/projects/${project.slug}`}
@@ -257,7 +261,7 @@ export function Projects() {
                         {project.tagline}
                       </p>
                       {project.results[0] && (
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 mb-3">
                           <span className="text-sm font-bold text-foreground">
                             {project.results[0].value}
                           </span>
@@ -266,8 +270,29 @@ export function Projects() {
                           </span>
                         </div>
                       )}
+                      <div className="flex flex-wrap gap-1.5 pr-8">
+                        {project.techStack.slice(0, 4).map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2 py-0.5 text-[10px] rounded border border-border text-muted-foreground"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </GlowCard>
                   </Link>
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${project.title} source on GitHub`}
+                      className="absolute bottom-4 right-4 z-10 text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <GitHubIcon className="h-4 w-4" />
+                    </a>
+                  )}
                 </motion.div>
               ))}
             </div>

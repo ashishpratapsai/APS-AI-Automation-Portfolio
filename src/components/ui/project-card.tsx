@@ -38,7 +38,7 @@ export function ProjectCard({ project, index, featured }: ProjectCardProps) {
             featured ? "h-48 sm:h-64" : "h-40"
           )}
         >
-          {!isPlaceholder ? (
+          {!isPlaceholder && project.heroImage ? (
             <Image
               src={project.heroImage}
               alt={project.title}

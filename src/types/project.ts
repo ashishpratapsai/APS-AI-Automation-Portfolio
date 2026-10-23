@@ -16,7 +16,7 @@ export interface Project {
   description: string;
   featured: boolean;
   category: string;
-  heroImage: string;
+  heroImage?: string;
   screenshots: string[];
   problem: string;
   solution: string;
