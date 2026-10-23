@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | Ashish Pratap Singh",
   },
   description:
-    "I build autonomous AI systems and LLM-powered applications that serve businesses. Built Institura solo, a live SaaS for 2 coaching institutes with 600+ students, replacing ₹10L+/yr in staff cost per institute. Available for AI automation engineering roles and consulting.",
+    "I build autonomous AI systems and LLM-powered applications that serve businesses. Built Institura solo, a live SaaS for 3 coaching institutes with 1,200+ students, replacing ₹10L+/yr in staff cost per institute. Available for AI automation engineering roles and consulting.",
   keywords: [
     "AI Engineer",
     "AI automation engineer",
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     siteName: "Ashish Pratap Singh | AI Automation Engineer & LLM Systems",
     title: "Ashish Pratap Singh | AI Automation Engineer & LLM Systems",
     description:
-      "I build autonomous AI systems and LLM-powered applications that serve businesses. Built Institura solo, a live SaaS for 2 coaching institutes with 600+ students, replacing ₹10L+/yr in staff cost per institute. Available for AI automation engineering roles and consulting.",
+      "I build autonomous AI systems and LLM-powered applications that serve businesses. Built Institura solo, a live SaaS for 3 coaching institutes with 1,200+ students, replacing ₹10L+/yr in staff cost per institute. Available for AI automation engineering roles and consulting.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Ashish Pratap Singh | AI Automation Engineer & LLM Systems",
     description:
-      "I build autonomous AI systems and LLM-powered applications that serve businesses. Built Institura solo, a live SaaS for 2 coaching institutes with 600+ students, replacing ₹10L+/yr in staff cost per institute.",
+      "I build autonomous AI systems and LLM-powered applications that serve businesses. Built Institura solo, a live SaaS for 3 coaching institutes with 1,200+ students, replacing ₹10L+/yr in staff cost per institute.",
   },
   robots: {
     index: true,

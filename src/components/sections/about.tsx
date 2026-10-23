@@ -23,7 +23,7 @@ const valuePoints = [
   {
     heading: "LLM Engineering Depth",
     bullets: [
-      "Build autonomous AI agents in Python that reason, use tools, and deliver structured outputs, not just API wrappers.",
+      "Build LLM systems in Python and TypeScript on the Claude API: tool use for structured outputs, batch processing and prompt caching, not just API wrappers.",
       "Production patterns: real-time streaming responses, structured data extraction from unstructured text, multi-step agent orchestration.",
       "The same LLM systems I build for my own products, I build for clients.",
     ],
@@ -60,7 +60,7 @@ const toolGroups: { label: string; tools: Tool[] }[] = [
     label: "AI",
     tools: [
       { name: "OpenAI", icon: "openai", color: "#412991" },
-      { name: "Claude Haiku / Sonnet", icon: "claude", color: "#D97757" },
+      { name: "Claude", icon: "claude", color: "#D97757" },
       { name: "Gemini", icon: "googlegemini", color: "#8E75B2" },
       { name: "Voyage AI", icon: null },
     ],
