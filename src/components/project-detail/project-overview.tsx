@@ -68,7 +68,7 @@ export function ProjectOverview({ project }: { project: Project }) {
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
-          Our Solution
+          What I Built
         </h2>
         <RichText text={project.solution} />
       </motion.div>

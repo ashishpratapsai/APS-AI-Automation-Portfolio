@@ -347,16 +347,16 @@ export const projects: Project[] = [
           "No one needs to re-watch a 45-minute recording. AI extracts every key pointer, decision, and action item automatically. Across 80+ calls/month, that's 60+ hours of review time eliminated for the team.",
       },
       {
-        label: "Data captured per meeting",
-        value: "100%",
+        label: "Call types auto-classified",
+        value: "4",
         description:
-          "Every detail from every call is captured: discussion points, objections, pricing mentioned, decisions, follow-ups. Nothing relies on memory. Searchable forever.",
+          "Every client call is tagged as discovery, demo, negotiation, or closing, so the CRM shows where each deal stands without anyone filling in a field.",
       },
       {
-        label: "Follow-ups missed",
-        value: "Zero",
+        label: "Manual notes per call",
+        value: "0",
         description:
-          "Action items are extracted and logged in the CRM automatically. No more 'I forgot what we discussed last time' or 'Did we promise them that feature?'",
+          "Discussion points, decisions, objections, pricing and action items are extracted and logged in the CRM automatically. No more 'I forgot what we discussed last time' or 'Did we promise them that feature?'",
       },
       {
         label: "Revenue impact",
@@ -482,7 +482,7 @@ export const projects: Project[] = [
       "/images/projects/proposal-system-call-tracking.png",
     ],
     problem:
-      "- After every sales call, someone manually writes a proposal: review notes, look up pricing, create PandaDoc doc, format it, send it\n- This takes **2-3 hours per proposal** and usually happens **1-3 days after the call**\n- By then, the prospect has gone cold, talked to a competitor, or lost urgency\n- Responding within 5 minutes makes you **21x more likely to close**\n- Proposals based on a single call miss context from **earlier conversations** with the same client\n- The bottleneck isn't the sales conversation. It's the **time between the conversation and the proposal**",
+      "- After every sales call, someone manually writes a proposal: review notes, look up pricing, create PandaDoc doc, format it, send it\n- This takes **2-3 hours per proposal** and usually happens **1-3 days after the call**\n- By then, the prospect has gone cold, talked to a competitor, or lost urgency\n- Proposals based on a single call miss context from **earlier conversations** with the same client\n- The bottleneck isn't the sales conversation. It's the **time between the conversation and the proposal**",
     solution:
       "- **Fathom webhook** captures every call transcript the moment it ends\n- AI **classifies each meeting** as internal or client-facing by analyzing participant domains. Internal meetings get their own note storage, client meetings feed the proposal pipeline\n- System **aggregates multiple meetings** with the same client. The AI smartly selects which points are still relevant vs. outdated across the full conversation history\n- AI extracts: **services needed, budget range, timeline, company details, decision-maker info**\n- **Manual override via CRM** — write commands in the Airtable CRM to add, modify, or overwrite AI-extracted content before generation\n- AI agent matches requirements against the **service catalog via PandaDoc API**. If an item isn't in the catalog, the AI **creates custom pricing** instead of failing\n- Creates a **branded proposal from a template** with dynamic pricing tables, package selection, and all extracted values filled in automatically\n- Separate **pricing update flow** for post-generation modifications\n- After signing: **Stripe payment**, branded Google Drive folder, onboarding email sent automatically\n- End-to-end: call ends, proposal sent, contract signed, payment collected, client onboarded. **Zero manual steps**",
     workflow: [
@@ -529,7 +529,7 @@ export const projects: Project[] = [
         label: "Proposal delivery time",
         value: "52 sec",
         description:
-          "From end of sales call to a fully branded, priced proposal in the prospect's inbox. Previously took 1-3 days. Responding within 5 minutes makes you 21x more likely to close (Harvard Business Review).",
+          "From end of sales call to a fully branded, priced proposal in the prospect's inbox. Previously took 1-3 days.",
       },
       {
         label: "Deals saved from going cold",
